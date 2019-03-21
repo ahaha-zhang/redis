@@ -1,0 +1,9 @@
+# Hashes of file build rules.
+2fa8b6b474243562ae228be4962681ac libmariadb/CMakeFiles/SYM_libmysqlclient.a
+2fa8b6b474243562ae228be4962681ac libmariadb/CMakeFiles/SYM_libmysqlclient.dylib
+2fa8b6b474243562ae228be4962681ac libmariadb/CMakeFiles/SYM_libmysqlclient_r.a
+2fa8b6b474243562ae228be4962681ac libmariadb/CMakeFiles/SYM_libmysqlclient_r.dylib
+05755e5e24b4f2680f798eaa8bb20aa4 libmariadb/libmysqlclient.a
+9c739ed528c4b0d093ef109c8119f893 libmariadb/libmysqlclient.dylib
+56a1b9ecf80c8b177cc032cff042f634 libmariadb/libmysqlclient_r.a
+24dfcf57b2f331e940629d9089b1ea5e libmariadb/libmysqlclient_r.dylib

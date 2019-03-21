@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libcctap.a  CMakeFiles/cctap.dir/tap.c.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libcctap.a

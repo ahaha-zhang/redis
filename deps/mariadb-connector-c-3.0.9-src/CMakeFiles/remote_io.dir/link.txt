@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -O3 -DNDEBUG -DDBUG_OFF -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -bundle -Wl,-headerpad_max_install_names -L/usr/local/opt/openssl/lib -o remote_io.so CMakeFiles/remote_io.dir/plugins/io/remote_io.c.o /usr/lib/libcurl.dylib 

@@ -49,7 +49,7 @@ typedef struct mysqlUserInfo{
 }mysqlUserInfo;
 
 typedef struct mysqlAsyncConnection{
-    MYSQL *mysql;
+    MYSQL mysql;
     MYSQL *ret_mysql;
     MYSQL_RES *mysql_result;
     MYSQL_ROW mysql_row;
@@ -81,17 +81,17 @@ typedef struct mysqlAsyncConnection{
 
 }mysqlAsyncConnection;
 
-mysqlAsyncConnection* mysqlAsyncConnectionInit(mysqlUserInfo *userinfo,char* ip,int port);
-void mysqlAsyncConnectionHandler();
+mysqlAsyncConnection* mysqlAsyncConnectionInit(mysqlUserInfo *,char* ,int );
+int mysqlAsyncConnectionHandler(mysqlAsyncConnection*);
 void mysqlAsyncConnectionCallback();
-void mysqlAsyncPingHandler();
+void mysqlAsyncClose(mysqlAsyncConnection*);
+void mysqlAsyncPingHandler(mysqlAsyncConnection*);
 void mysqlAsyncPingCallback();
-void mysqlAsyncQueryHandler();
+void mysqlAsyncQueryHandler(mysqlAsyncConnection*);
 void mysqlAsyncQueryCallback();
-void mysqlAsyncFetchRowHandler();
+void mysqlAsyncFetchRowHandler(mysqlAsyncConnection*);
 void mysqlAsyncFetchRowCallback();
-void mysqlAsyncClose();
-void mysqlAsyncHandler(mysqlAsyncConnection *mc);
+void mysqlAsyncHandler(mysqlAsyncConnection *);
 
 //adapter for ae event loop library
 typedef struct mysqlAeEvents {
@@ -99,7 +99,7 @@ typedef struct mysqlAeEvents {
     aeEventLoop *loop;
     int fd;
     int reading, writing;
-} mysqlAeEvents;
+}mysqlAeEvents;
 
 void mysqlAeReadEvent(aeEventLoop *el, int fd, void *privdata, int mask);
 void mysqlAeWriteEvent(aeEventLoop *el, int fd, void *privdata, int mask);
@@ -108,5 +108,5 @@ void mysqlAeDelRead(void *privdata);
 void mysqlAeAddWrite(void *privdata);
 void mysqlAeDelWrite(void *privdata);
 void mysqlAeCleanup(void *privdata);
-static int mysqlAeAttach(aeEventLoop *loop, mysqlAsyncConnection *ac);
+static int mysqlAeAttach(aeEventLoop *, mysqlAsyncConnection *);
 

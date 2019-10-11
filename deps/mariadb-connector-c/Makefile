@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/local/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CPackSourceConfig.cmake
+	/usr/local/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -148,9 +148,9 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

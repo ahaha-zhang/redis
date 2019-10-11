@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # Include any dependencies generated for this target.
 include libmariadb/CMakeFiles/mariadbclient.dir/depend.make
@@ -62,53 +62,53 @@ mariadbclient_OBJECTS =
 
 # External object files for target mariadbclient
 mariadbclient_EXTERNAL_OBJECTS = \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o" \
-"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o"
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o" \
+"/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o"
 
 libmariadb/libmariadbclient.a: libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o
 libmariadb/libmariadbclient.a: libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o
@@ -159,9 +159,9 @@ libmariadb/libmariadbclient.a: libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_asy
 libmariadb/libmariadbclient.a: libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o
 libmariadb/libmariadbclient.a: libmariadb/CMakeFiles/mariadbclient.dir/build.make
 libmariadb/libmariadbclient.a: libmariadb/CMakeFiles/mariadbclient.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking C static library libmariadbclient.a"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/mariadbclient.dir/cmake_clean_target.cmake
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mariadbclient.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking C static library libmariadbclient.a"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/mariadbclient.dir/cmake_clean_target.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mariadbclient.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libmariadb/CMakeFiles/mariadbclient.dir/build: libmariadb/libmariadbclient.a
@@ -173,10 +173,10 @@ libmariadb/CMakeFiles/mariadbclient.dir/requires:
 .PHONY : libmariadb/CMakeFiles/mariadbclient.dir/requires
 
 libmariadb/CMakeFiles/mariadbclient.dir/clean:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/mariadbclient.dir/cmake_clean.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/mariadbclient.dir/cmake_clean.cmake
 .PHONY : libmariadb/CMakeFiles/mariadbclient.dir/clean
 
 libmariadb/CMakeFiles/mariadbclient.dir/depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadbclient.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadbclient.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libmariadb/CMakeFiles/mariadbclient.dir/depend
 

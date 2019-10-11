@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/mariadb_cleartext.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/mariadb_cleartext.c
 ma_global.h
 -
 mysql.h

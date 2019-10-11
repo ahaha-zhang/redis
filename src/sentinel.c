@@ -31,12 +31,17 @@
 #include "server.h"
 #include "hiredis.h"
 #include "async.h"
+#include "mysql.h"
+
 
 #include <ctype.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 extern char **environ;
 
@@ -84,7 +89,7 @@ typedef struct sentinelAddr {
 #define SENTINEL_MAX_PENDING_COMMANDS 100
 #define SENTINEL_ELECTION_TIMEOUT 10000
 #define SENTINEL_MAX_DESYNC 1000
-#define SENTINEL_DEFAULT_DENY_SCRIPTS_RECONFIG 1
+#define SENTINEL_DEFAULT_DENY_SCRIPTS_RECONFIG 0
 
 /* Failover machine different states. */
 #define SENTINEL_FAILOVER_STATE_NONE 0  /* No failover in progress. */
@@ -94,6 +99,8 @@ typedef struct sentinelAddr {
 #define SENTINEL_FAILOVER_STATE_WAIT_PROMOTION 4 /* Wait slave to change role */
 #define SENTINEL_FAILOVER_STATE_RECONF_SLAVES 5 /* SLAVEOF newmaster */
 #define SENTINEL_FAILOVER_STATE_UPDATE_CONFIG 6 /* Monitor promoted slave. */
+#define SENTINEL_FAILOVER_RUN_SWITCH_SCRIPT 7 /* Leader start to run mha_sentine_switch script */
+#define SENTINEL_FAILOVER_SWITCH_SCRIPT_STARTED 8
 
 #define SENTINEL_MASTER_LINK_STATUS_UP 0
 #define SENTINEL_MASTER_LINK_STATUS_DOWN 1
@@ -110,15 +117,65 @@ typedef struct sentinelAddr {
 #define SENTINEL_SCRIPT_NONE 0
 #define SENTINEL_SCRIPT_RUNNING 1
 #define SENTINEL_SCRIPT_MAX_QUEUE 256
-#define SENTINEL_SCRIPT_MAX_RUNNING 16
-#define SENTINEL_SCRIPT_MAX_RUNTIME 60000 /* 60 seconds max exec time. */
-#define SENTINEL_SCRIPT_MAX_RETRY 10
-#define SENTINEL_SCRIPT_RETRY_DELAY 30000 /* 30 seconds between retries. */
+#define SENTINEL_SCRIPT_MAX_RUNNING 1000
+#define SENTINEL_SCRIPT_MAX_RUNTIME 20000000 /* 20000 seconds max exec time. */
+#define SENTINEL_SCRIPT_MAX_RETRY 3
+#define SENTINEL_SCRIPT_RETRY_DELAY 3000 /* 3 seconds between retries. */
 
 /* SENTINEL SIMULATE-FAILURE command flags. */
 #define SENTINEL_SIMFAILURE_NONE 0
 #define SENTINEL_SIMFAILURE_CRASH_AFTER_ELECTION (1<<0)
 #define SENTINEL_SIMFAILURE_CRASH_AFTER_PROMOTION (1<<1)
+
+enum MDB_ASYNC_ST { // MariaDB Async State Machine
+    ASYNC_CONNECT_START,
+    ASYNC_CONNECT_CONT,
+    ASYNC_CONNECT_END,
+    ASYNC_CONNECT_SUCCESSFUL,
+    ASYNC_CONNECT_FAILED,
+    ASYNC_CONNECT_TIMEOUT,
+    ASYNC_PING_START,
+    ASYNC_PING_CONT,
+    ASYNC_PING_END,
+    ASYNC_SET_SQL_LOG_BIN_START,
+    ASYNC_SET_SQL_LOG_BIN_CONT,
+    ASYNC_SET_SQL_LOG_BIN_END,
+    ASYNC_PUBLISH_START,
+    ASYNC_PUBLISH_CONT,
+    ASYNC_PUBLISH_END,
+    ASYNC_SUBSCRIBE_START,
+    ASYNC_SUBSCRIBE_CONT,
+    ASYNC_SUBSCRIBE_END,
+    ASYNC_STORE_RESULT_START,
+    ASYNC_STORE_RESULT_CONT,
+    ASYNC_STORE_RESULT_END,
+    ASYNC_FETCH_ROW_START,
+    ASYNC_FETCH_ROW_CONT,
+    ASYNC_FETCH_ROW_END,
+    
+    ASYNC_IDLE
+};
+
+typedef struct mysqlAsyncConnection{
+    MYSQL mysql;
+    MYSQL *ret_mysql;
+    MYSQL_RES *mysql_result;
+    MYSQL_ROW mysql_row;
+    char* default_schema;
+    
+    int err;
+    char *errstr;       //mysql_error()
+    
+    int fd;             //mysql_get_socket()
+    
+    struct {
+        char *ip;
+        int port;
+    } addr;
+    int async_fetch_row_start;      //1:YES 0:NO
+    enum MDB_ASYNC_ST async_state_machine;    // Async state machine,mariadb async client status
+    aeEventLoop *loop;       //for binding server event loop
+}mysqlAsyncConnection;
 
 /* The link to a sentinelRedisInstance. When we have the same set of Sentinels
  * monitoring many masters, we have different instances representing the
@@ -139,9 +196,11 @@ typedef struct instanceLink {
     int disconnected;      /* Non-zero if we need to reconnect cc or pc. */
     int pending_commands;  /* Number of commands sent waiting for a reply. */
     redisAsyncContext *cc; /* Hiredis context for commands. */
-    redisAsyncContext *pc; /* Hiredis context for Pub / Sub. */
+    mysqlAsyncConnection *pc; /* Hiredis context for Pub / Sub. mariadb-client connection for sub/pub. Mysql version like mc */
+    mysqlAsyncConnection *mc;   /* mariadb-client connection for commands. Mysql version like cc */
     mstime_t cc_conn_time; /* cc connection time. */
     mstime_t pc_conn_time; /* pc connection time. */
+    mstime_t mc_conn_time; /* mc connection time. No used */
     mstime_t pc_last_activity; /* Last time we received any message. */
     mstime_t last_avail_time; /* Last time the instance replied to ping with
                                  a reply we consider valid. */
@@ -194,6 +253,9 @@ typedef struct sentinelRedisInstance {
     unsigned int quorum;/* Number of sentinels that need to agree on failure. */
     int parallel_syncs; /* How many slaves to reconfigure at same time. */
     char *auth_pass;    /* Password to use for AUTH against master & slaves. */
+    char *mysql_user;   /* User to use for AUTH against mysql master & slaves. */
+    char *mysql_passwd; /* Password to use for AUTH against mysql master & slaves. */
+    char *mysql_role;   /* Role to use for mysql cluster members . enum master/slave/read */
 
     /* Slave specific. */
     mstime_t master_link_down_time; /* Slave replication link down time. */
@@ -222,6 +284,7 @@ typedef struct sentinelRedisInstance {
      * are set to NULL no script is executed. */
     char *notification_script;
     char *client_reconfig_script;
+    char *mysql_failover_script;
     sds info; /* cached INFO output */
 } sentinelRedisInstance;
 
@@ -354,6 +417,412 @@ static int redisAeAttach(aeEventLoop *loop, redisAsyncContext *ac) {
     return C_OK;
 }
 
+
+/*====================MySQL Connection Handlers============================== */
+int mysqlAeEventBind(aeEventLoop*,mysqlAsyncConnection*);
+mysqlAsyncConnection* mysqlAsyncConnectionInit(char* ,int);
+int mysqlAsyncConnectionHandler(sentinelRedisInstance*,mysqlAsyncConnection *);
+int mysqlAsyncPubSubConnectionHandler(sentinelRedisInstance *,mysqlAsyncConnection *);
+int mysqlAsyncSetSqlLogBinHandler(sentinelRedisInstance*,mysqlAsyncConnection *);
+void mysqlAsyncClose(mysqlAsyncConnection*);
+int mysqlAsyncPingHandler(sentinelRedisInstance*,mysqlAsyncConnection *);
+int mysqlAsyncPublishHandler(sentinelRedisInstance*,mysqlAsyncConnection *);
+int mysqlAsyncSubscribeHandler(sentinelRedisInstance*,mysqlAsyncConnection *);
+int mysqlAsyncHandlerCallback(struct aeEventLoop *l,int fd,void *data,int mask);
+int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *l,int fd,void *data,int mask);
+
+void sentinelProcessHelloMessage(char *hello, int hello_len);
+
+/* ====================MySQL Handler And Callback Implements===============================*/
+int mysqlAeEventBind(aeEventLoop* loop,mysqlAsyncConnection* mc){
+    mc->loop=loop;
+    return C_OK;
+}
+
+mysqlAsyncConnection* mysqlAsyncConnectionInit(char* ip,int port){
+    mysqlAsyncConnection* mc=(mysqlAsyncConnection*)zmalloc(sizeof(mysqlAsyncConnection));
+    if (mc==NULL){
+        return NULL;
+    }
+    mysql_init(&mc->mysql);
+    mysql_options(&mc->mysql, MYSQL_OPT_NONBLOCK, 0);
+    mc->async_state_machine=ASYNC_CONNECT_START;
+    mc->addr.ip = ip;
+    mc->addr.port = port;
+    mc->default_schema = "mysql";   //must mysql schema
+    mc->err = 0;
+    mc->errstr = "";
+    mysqlAeEventBind(server.el,mc);
+    return mc;
+}
+
+int mysqlAsyncConnectionHandler(sentinelRedisInstance *master,mysqlAsyncConnection *mc){
+    int status;
+    if (mc->async_state_machine != ASYNC_CONNECT_START) return 0;
+    status = mysql_real_connect_start(&mc->ret_mysql,
+                             &mc->mysql,
+                             mc->addr.ip,
+                             master->mysql_user,
+                             master->mysql_passwd,
+                             "mysql",
+                             mc->addr.port,
+                             NULL,
+                             0);
+    if (status){
+        mc->fd=mysql_get_socket(&mc->mysql);
+        status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
+        if(status == AE_OK){
+            mc->async_state_machine = ASYNC_CONNECT_CONT;
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int mysqlAsyncPubSubConnectionHandler(sentinelRedisInstance *master,mysqlAsyncConnection *pc){
+    int status;
+    if (pc->async_state_machine != ASYNC_CONNECT_START) return 0;
+    status = mysql_real_connect_start(&pc->ret_mysql,
+                                      &pc->mysql,
+                                      pc->addr.ip,
+                                      master->mysql_user,
+                                      master->mysql_passwd,
+                                      "mysql",
+                                      pc->addr.port,
+                                      NULL,
+                                      0);
+    if (status){
+        pc->fd=mysql_get_socket(&pc->mysql);
+        status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
+        if(status == AE_OK){
+            pc->async_state_machine = ASYNC_CONNECT_CONT;
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void mysqlAsyncClose(mysqlAsyncConnection* mc){
+    if(!mc->mysql_result){
+        mysql_free_result(mc->mysql_result);
+    }
+    //if(&mc->mysql)
+    mysql_close(&mc->mysql);
+    zfree(mc);
+}
+
+int mysqlAsyncPingHandler(sentinelRedisInstance* master,mysqlAsyncConnection *mc){
+    int status;
+    if (mc->async_state_machine != ASYNC_PING_START )
+        return C_OK;
+    
+    status = mysql_real_query_start(&mc->err, &mc->mysql, "select 1",0);
+    if (mc->err){
+        serverLog(LL_WARNING,"mysql_real_query_start error str:%s",mysql_error(&mc->mysql));
+        master->link->disconnected = 1;
+        mc->async_state_machine = ASYNC_CONNECT_FAILED;
+        return C_ERR;
+    }else{
+        status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
+        if(status == AE_OK){
+            mc->async_state_machine = ASYNC_PING_CONT;
+            return C_OK;
+        }
+    }
+    return C_ERR;
+}
+
+int mysqlAsyncSetSqlLogBinHandler(sentinelRedisInstance* master,mysqlAsyncConnection *pc){
+    int status;
+    if (pc->async_state_machine != ASYNC_SET_SQL_LOG_BIN_START)
+        return C_ERR;
+    status = mysql_real_query_start(&pc->err, &pc->mysql, "set sql_log_bin=0",0);
+    if (pc->err){
+        serverLog(LL_WARNING,"ASYNC_SET_SQL_LOG_BIN_START query error str:%s",mysql_error(&pc->mysql));
+        pc->async_state_machine = ASYNC_CONNECT_FAILED;
+    }else{
+        status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
+        if(status == AE_OK){
+            pc->async_state_machine = ASYNC_SET_SQL_LOG_BIN_CONT;
+            return C_OK;
+        }
+    }
+    return C_ERR;
+}
+
+int mysqlAsyncPublishHandler(sentinelRedisInstance* master,mysqlAsyncConnection *pc){
+    int status;
+    char query_str[512];
+    char ip[NET_IP_STR_LEN];
+    char *announce_ip;
+    int announce_port;
+
+    if (anetSockName(master->link->pc->fd,ip,sizeof(ip),NULL) == -1)
+        return C_ERR;
+    announce_ip = ip;
+    announce_port = server.port;
+    
+    if (pc->async_state_machine != ASYNC_PUBLISH_START)
+        return C_ERR;
+    /*replace into mysql.sentinels(
+     sentinel_ip,sentinel_port,sentinel_runid,
+     sentinel_current_epoch,
+     cluster_name,master_ip,master_port,
+     master_config_epoch)
+     values
+     (announce_ip, announce_port, sentinel.myid,
+    (unsigned long long) sentinel.current_epoch,
+    master->name,master_addr->ip,master_addr->port,
+    (unsigned long long) master->config_epoch)
+    */
+    snprintf(query_str, 256, "replace into mysql_sentinel (sentinel_ip,sentinel_port,sentinel_runid,sentinel_current_epoch,cluster_name,master_ip,master_port,master_config_epoch) values ('%s',%d,'%s',%llu,'%s','%s',%d,%llu)",announce_ip, announce_port, sentinel.myid,(unsigned long long) sentinel.current_epoch,master->name,master->addr->ip,master->addr->port,(unsigned long long) master->config_epoch);
+    status = mysql_real_query_start(&pc->err, &pc->mysql,query_str,0);
+    if (pc->err){
+        serverLog(LL_WARNING,"mysql_real_query_start query error str:%s",mysql_error(&pc->mysql));
+        pc->async_state_machine = ASYNC_CONNECT_FAILED;
+    }else{
+        status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
+        if(status == AE_OK){
+            pc->async_state_machine = ASYNC_PUBLISH_CONT;
+            return C_OK;
+        }
+    }
+    return C_ERR;
+}
+
+/*
+ work flow:
+ check mc->async_state_machine
+ call async api
+ add file event
+ set status
+ return status
+ */
+int mysqlAsyncHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mask){
+    int status;
+    sentinelRedisInstance* master;
+    mysqlAsyncConnection* mc;
+    master=(sentinelRedisInstance*)data;
+    if(!master->link->mc){
+        master->link->disconnected = 1;
+        aeDeleteFileEvent(loop,fd,mask);
+        return 0;
+    }
+    mc=master->link->mc;
+    switch (mc->async_state_machine){
+        case ASYNC_CONNECT_CONT:
+            status = mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (!mc->ret_mysql){
+                serverLog(LL_WARNING,"Failed to mysql_real_connect()");
+                if (mc->err){
+                    serverLog(LL_WARNING,"ASYNC_CONNECT_CONT error str:%s",mysql_error(&mc->mysql));
+                }
+                master->link->disconnected = 1;
+                break;
+            }
+            if (status){
+                if(status == 1){
+                    mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
+                    if (!mc->ret_mysql)
+                        serverLog(LL_WARNING,"Failed to mysql_real_connect() 2222");
+                    status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
+                    if(status == AE_OK){
+                        mc->async_state_machine = ASYNC_CONNECT_CONT;
+                        return 1;
+                    }
+                }else{
+                    mc->err = mysql_errno(&mc->mysql);
+                    //mc->errstr = mysql_error(&mc->mysql);
+                    //TODO@zhangyanjun:If user privilege error ,ignore
+                    master->link->disconnected = 1;
+                    serverLog(LL_WARNING,"mysql_real_connect_cont disconnected done");
+                }
+
+            }else{
+                master->link->disconnected = 0;
+                master->link->last_avail_time = mstime();
+                master->link->act_ping_time = 0;
+                master->link->last_pong_time = mstime();
+                mc->async_state_machine = ASYNC_PING_START;
+            }
+            break;
+        case ASYNC_PING_CONT:
+            status = mysql_real_query_cont(&mc->err, &mc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (mc->err){
+                serverLog(LL_WARNING,"ASYNC_PING_CONT error str:%s",mysql_error(&mc->mysql));
+            }
+            if (status){
+                //mc->errstr = mysql_error(&mc->mysql);
+                //TODO@zhangyanjun:If user privilege error ,ignore
+                master->link->disconnected = 1;
+                mc->async_state_machine=ASYNC_CONNECT_START;
+                serverLog(LL_WARNING,"mysql_ping disconnected done");
+            }else{
+                //mc->errstr = mysql_error(&mc->mysql);
+                master->link->disconnected = 0;
+                master->link->last_avail_time = mstime();
+                master->link->act_ping_time = 0;
+                master->link->last_pong_time = mstime();
+                mc->async_state_machine=ASYNC_PING_START;
+                mc->mysql_result = mysql_use_result(&mc->mysql);
+                mysql_free_result(mc->mysql_result);
+            }
+            break;
+        default:
+            return 0;
+    }
+    return 0;
+}
+
+int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mask){
+    int status = 0;
+    sentinelRedisInstance* master;
+    mysqlAsyncConnection* pc;
+    char subscribe_sql[512];
+    master=(sentinelRedisInstance*)data;
+    if(!master->link->pc){
+        master->link->disconnected = 1;
+        aeDeleteFileEvent(loop,fd,mask);
+        return 0;
+    }
+    pc = master->link->pc;
+    switch (pc->async_state_machine){
+        case ASYNC_CONNECT_CONT:
+            status = mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (!pc->ret_mysql)
+                serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect()");
+            if (pc->err){
+                serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s",mysql_error(&pc->mysql));
+            }
+            if (status){
+                if(status == 1){
+                    mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
+                    if (!pc->ret_mysql)
+                        serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() 2222");
+                    aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
+                    if(status == AE_OK){
+                        pc->async_state_machine = ASYNC_CONNECT_CONT;
+                        return 1;
+                    }
+                }else{
+                    pc->err = mysql_errno(&pc->mysql);
+                    //pc->errstr = mysql_error(&pc->mysql);
+                    //TODO@zhangyanjun:If user privilege error ,ignore
+                    master->link->disconnected=1;
+                    serverLog(LL_WARNING,"PubSub mysql_real_connect_cont disconnected done");
+                    //disconnect
+                }
+                
+            }else{
+                master->link->pc_conn_time = mstime();
+                master->link->pc_last_activity = mstime();
+                pc->async_state_machine=ASYNC_SET_SQL_LOG_BIN_START;//SET sql_log_bin =0 after connected
+                mysqlAsyncSetSqlLogBinHandler(master,pc);
+            }
+            break;
+        case ASYNC_SET_SQL_LOG_BIN_CONT:
+            status = mysql_real_query_cont(&pc->err, &pc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (pc->err){
+                serverLog(LL_WARNING,"PubSub ASYNC_SET_SQL_LOG_BIN_CONT error str:%s",mysql_error(&pc->mysql));
+                master->link->disconnected = 1;
+            }else{
+                //pc->errstr = mysql_error(&pc->mysql);
+                pc->async_state_machine=ASYNC_PUBLISH_START;
+                pc->mysql_result = mysql_use_result(&pc->mysql);
+                mysql_free_result(pc->mysql_result);
+            }
+            break;
+        case ASYNC_PUBLISH_CONT:
+            status = mysql_real_query_cont(&pc->err, &pc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (pc->err){
+                serverLog(LL_WARNING,"PubSub ASYNC_PUBLISH_CONT error str:%s",mysql_error(&pc->mysql));
+                pc->async_state_machine = ASYNC_CONNECT_FAILED;
+                //master->link->disconnected = 1;
+            }else{
+                //pc->errstr = mysql_error(&pc->mysql);
+                master->last_pub_time = mstime();
+                master->link->pc_last_activity = mstime();
+                pc->async_state_machine=ASYNC_SUBSCRIBE_START;
+                snprintf(subscribe_sql, 512, "select concat(sentinel_ip,',',sentinel_port,',',sentinel_runid,',',sentinel_current_epoch,',',cluster_name,',',master_ip,',',master_port,',',master_config_epoch) as hello from mysql.mysql_sentinel where datachange_lasttime > now() - interval 1 minute and sentinel_runid != '%s'",sentinel.myid);
+                status = mysql_real_query_start(&pc->err, &pc->mysql,subscribe_sql,0);
+                if (pc->err){
+                    serverLog(LL_WARNING,"mysql_real_query_start for sub query error str:%s",mysql_error(&pc->mysql));
+                    pc->async_state_machine = ASYNC_CONNECT_FAILED;
+                }
+                else{
+                    status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
+                    if(status == AE_OK){
+                        pc->async_state_machine = ASYNC_SUBSCRIBE_CONT;
+                        return 0;
+                    }
+                }
+            }
+            break;
+        case ASYNC_SUBSCRIBE_CONT:
+            status = mysql_real_query_cont(&pc->err, &pc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (pc->err){
+                serverLog(LL_WARNING,"PubSub ASYNC_SUBSCRIBE_CONT error str:%s",mysql_error(&pc->mysql));
+                pc->async_state_machine = ASYNC_CONNECT_FAILED;
+            }else{
+                master->link->pc_last_activity = mstime();
+                status = mysql_store_result_start(&pc->mysql_result,&pc->mysql);
+                if (status){
+                    pc->async_state_machine = ASYNC_STORE_RESULT_START;
+                    status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
+                    if(status == AE_OK){
+                        pc->async_state_machine = ASYNC_STORE_RESULT_CONT;
+                        return 0;
+                    }
+                }else{
+                    for(;;){
+                        pc->mysql_row = mysql_fetch_row(pc->mysql_result);
+                        if(!pc->mysql_row){
+                            pc->async_state_machine = ASYNC_PUBLISH_START;
+                            return 0;
+                        }else{
+                            sentinelProcessHelloMessage(pc->mysql_row[0],strlen(pc->mysql_row[0]));
+                        }
+                    }
+                    pc->async_state_machine = ASYNC_PUBLISH_START;
+                    mysql_free_result(pc->mysql_result);
+                    return 0;
+                }
+            }
+            break;
+        case ASYNC_STORE_RESULT_CONT:
+            status = mysql_store_result_cont(&pc->mysql_result, &pc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (!pc->mysql_row){
+                pc->async_state_machine = ASYNC_PUBLISH_START;
+                mysql_free_result(pc->mysql_result);
+                return 0;
+            }else{
+                for(;;){
+                    pc->mysql_row = mysql_fetch_row(pc->mysql_result);
+                    if(!pc->mysql_row){
+                        pc->async_state_machine = ASYNC_PUBLISH_START;
+                        return 0;
+                    }else{
+                        sentinelProcessHelloMessage(pc->mysql_row[0],strlen(pc->mysql_row[0]));
+                    }
+                }
+                pc->async_state_machine = ASYNC_PUBLISH_START;
+                mysql_free_result(pc->mysql_result);
+                return 0;
+            }
+            break;
+        default:
+            return 0;
+    }
+    return 0;
+}
+
 /* ============================= Prototypes ================================= */
 
 void sentinelLinkEstablishedCallback(const redisAsyncContext *c, int status);
@@ -376,6 +845,7 @@ char *sentinelVoteLeader(sentinelRedisInstance *master, uint64_t req_epoch, char
 void sentinelFlushConfig(void);
 void sentinelGenerateInitialMonitorEvents(void);
 int sentinelSendPing(sentinelRedisInstance *ri);
+int sentinelSendPingMysql(sentinelRedisInstance *ri);
 int sentinelForceHelloUpdateForMaster(sentinelRedisInstance *master);
 sentinelRedisInstance *getSentinelRedisInstanceByAddrAndRunID(dict *instances, char *ip, int port, char *runid);
 void sentinelSimFailureCrash(void);
@@ -927,6 +1397,25 @@ void sentinelCallClientReconfScript(sentinelRedisInstance *master, int role, cha
         state, from->ip, fromport, to->ip, toport, NULL);
 }
 
+/*
+ * It is called every time a failover is performed for MySQL failover.
+ */
+void sentinelCallMysqlFailoverScript(sentinelRedisInstance *master)
+{
+    if (master->failover_state != SENTINEL_FAILOVER_RUN_SWITCH_SCRIPT)
+        return;
+    char fromport[32];
+
+    if (master->mysql_failover_script == NULL) return;
+    ll2string(fromport,sizeof(fromport),master->addr->port);
+    sentinelScheduleScriptExecution(master->mysql_failover_script,
+        master->name,   //cluster_name
+        master->mysql_role,
+        "dead", master->addr->ip, fromport,  NULL);
+    master->failover_state = SENTINEL_FAILOVER_SWITCH_SCRIPT_STARTED;
+    serverLog(LL_WARNING,"call-mysql-failover-script");
+}
+
 /* =============================== instanceLink ============================= */
 
 /* Create a not yet connected link object. */
@@ -938,8 +1427,10 @@ instanceLink *createInstanceLink(void) {
     link->pending_commands = 0;
     link->cc = NULL;
     link->pc = NULL;
+    link->mc = NULL;
     link->cc_conn_time = 0;
     link->pc_conn_time = 0;
+    link->mc_conn_time = 0;
     link->last_reconn_time = 0;
     link->pc_last_activity = 0;
     /* We set the act_ping_time to "now" even if we actually don't have yet
@@ -954,6 +1445,7 @@ instanceLink *createInstanceLink(void) {
 }
 
 /* Disconnect an hiredis connection in the context of an instance link. */
+//TODO@zhangyanjun:close mysql conntection
 void instanceLinkCloseConnection(instanceLink *link, redisAsyncContext *c) {
     if (c == NULL) return;
 
@@ -961,10 +1453,23 @@ void instanceLinkCloseConnection(instanceLink *link, redisAsyncContext *c) {
         link->cc = NULL;
         link->pending_commands = 0;
     }
-    if (link->pc == c) link->pc = NULL;
+    //if (link->pc == c) link->pc = NULL;
     c->data = NULL;
     link->disconnected = 1;
     redisAsyncFree(c);
+}
+
+void instanceLinkCloseMysqlConnection(instanceLink *link, mysqlAsyncConnection *c) {
+    if (c == NULL) return;
+    
+    if (link->mc == c) {
+        link->mc = NULL;
+    }
+    if (link->pc == c) {
+        link->pc = NULL;
+    }
+    link->disconnected = 1;
+    mysqlAsyncClose(c);
 }
 
 /* Decrement the refcount of a link object, if it drops to zero, actually
@@ -975,6 +1480,7 @@ void instanceLinkCloseConnection(instanceLink *link, redisAsyncContext *c) {
  * pending requests in link->cc (hiredis connection for commands) to a
  * callback that will just ignore them. This is useful to avoid processing
  * replies for an instance that no longer exists. */
+//TODO@zhangyanjun:free mysql connection
 instanceLink *releaseInstanceLink(instanceLink *link, sentinelRedisInstance *ri)
 {
     serverAssert(link->refcount > 0);
@@ -1002,7 +1508,9 @@ instanceLink *releaseInstanceLink(instanceLink *link, sentinelRedisInstance *ri)
     }
 
     instanceLinkCloseConnection(link,link->cc);
-    instanceLinkCloseConnection(link,link->pc);
+    instanceLinkCloseMysqlConnection(link,link->pc);
+    instanceLinkCloseMysqlConnection(link,link->mc);
+
     zfree(link);
     return NULL;
 }
@@ -1074,7 +1582,7 @@ int sentinelUpdateSentinelAddressInAllMasters(sentinelRedisInstance *ri) {
         if (match->link->cc != NULL)
             instanceLinkCloseConnection(match->link,match->link->cc);
         if (match->link->pc != NULL)
-            instanceLinkCloseConnection(match->link,match->link->pc);
+            instanceLinkCloseMysqlConnection(match->link,match->link->pc);
 
         if (match == ri) continue; /* Address already updated for it. */
 
@@ -1097,17 +1605,18 @@ int sentinelUpdateSentinelAddressInAllMasters(sentinelRedisInstance *ri) {
  *
  * Note: we don't free the hiredis context as hiredis will do it for us
  * for async connections. */
+//TODO@zhangyanjun:diff for pc
 void instanceLinkConnectionError(const redisAsyncContext *c) {
     instanceLink *link = c->data;
-    int pubsub;
+    //int pubsub;
 
     if (!link) return;
 
-    pubsub = (link->pc == c);
-    if (pubsub)
-        link->pc = NULL;
-    else
-        link->cc = NULL;
+    //pubsub = (link->pc == c);
+    //if (pubsub)
+    //    link->pc = NULL;
+    //else
+    link->cc = NULL;
     link->disconnected = 1;
 }
 
@@ -1146,11 +1655,11 @@ void sentinelDisconnectCallback(const redisAsyncContext *c, int status) {
  * a master with the same name, a slave with the same address, or a sentinel
  * with the same ID already exists. */
 
-sentinelRedisInstance *createSentinelRedisInstance(char *name, int flags, char *hostname, int port, int quorum, sentinelRedisInstance *master) {
+sentinelRedisInstance *createSentinelRedisInstance(char *name, int flags, char *hostname, int port, int quorum, sentinelRedisInstance *master, char *mysql_user, char *mysql_passwd, char *mysql_role) {
     sentinelRedisInstance *ri;
     sentinelAddr *addr;
     dict *table = NULL;
-    char slavename[NET_PEER_ID_LEN], *sdsname;
+    char slavename[NET_PEER_ID_LEN], *sdsname, *sdsmysql_user, *sdsmysql_passwd, *sdsmysql_role;
 
     serverAssert(flags & (SRI_MASTER|SRI_SLAVE|SRI_SENTINEL));
     serverAssert((flags & SRI_MASTER) || master != NULL);
@@ -1173,6 +1682,9 @@ sentinelRedisInstance *createSentinelRedisInstance(char *name, int flags, char *
     else if (flags & SRI_SLAVE) table = master->slaves;
     else if (flags & SRI_SENTINEL) table = master->sentinels;
     sdsname = sdsnew(name);
+    sdsmysql_user = sdsnew(mysql_user);
+    sdsmysql_passwd = sdsnew(mysql_passwd);
+    sdsmysql_role = sdsnew(mysql_role);
     if (dictFind(table,sdsname)) {
         releaseSentinelAddr(addr);
         sdsfree(sdsname);
@@ -1199,6 +1711,9 @@ sentinelRedisInstance *createSentinelRedisInstance(char *name, int flags, char *
                             SENTINEL_DEFAULT_DOWN_AFTER;
     ri->master_link_down_time = 0;
     ri->auth_pass = NULL;
+    ri->mysql_user = sdsmysql_user;
+    ri->mysql_passwd = sdsmysql_passwd;
+    ri->mysql_role = sdsmysql_role;
     ri->slave_priority = SENTINEL_DEFAULT_SLAVE_PRIORITY;
     ri->slave_reconf_sent_time = 0;
     ri->slave_master_host = NULL;
@@ -1224,6 +1739,7 @@ sentinelRedisInstance *createSentinelRedisInstance(char *name, int flags, char *
     ri->promoted_slave = NULL;
     ri->notification_script = NULL;
     ri->client_reconfig_script = NULL;
+    ri->mysql_failover_script = NULL;
     ri->info = NULL;
 
     /* Role */
@@ -1250,9 +1766,13 @@ void releaseSentinelRedisInstance(sentinelRedisInstance *ri) {
 
     /* Free other resources. */
     sdsfree(ri->name);
+    sdsfree(ri->mysql_user);
+    sdsfree(ri->mysql_passwd);
+    sdsfree(ri->mysql_role);
     sdsfree(ri->runid);
     sdsfree(ri->notification_script);
     sdsfree(ri->client_reconfig_script);
+    sdsfree(ri->mysql_failover_script);
     sdsfree(ri->slave_master_host);
     sdsfree(ri->leader);
     sdsfree(ri->auth_pass);
@@ -1408,7 +1928,8 @@ void sentinelResetMaster(sentinelRedisInstance *ri, int flags) {
         ri->sentinels = dictCreate(&instancesDictType,NULL);
     }
     instanceLinkCloseConnection(ri->link,ri->link->cc);
-    instanceLinkCloseConnection(ri->link,ri->link->pc);
+    instanceLinkCloseMysqlConnection(ri->link,ri->link->pc);
+    instanceLinkCloseMysqlConnection(ri->link,ri->link->mc);
     ri->flags &= SRI_MASTER;
     if (ri->leader) {
         sdsfree(ri->leader);
@@ -1505,7 +2026,7 @@ int sentinelResetMasterAndChangeAddress(sentinelRedisInstance *master, char *ip,
         sentinelRedisInstance *slave;
 
         slave = createSentinelRedisInstance(NULL,SRI_SLAVE,slaves[j]->ip,
-                    slaves[j]->port, master->quorum, master);
+                    slaves[j]->port, master->quorum, master,NULL,NULL,NULL);
         releaseSentinelAddr(slaves[j]);
         if (slave) sentinelEvent(LL_NOTICE,"+slave",slave,"%@");
     }
@@ -1576,13 +2097,13 @@ char *sentinelGetInstanceTypeString(sentinelRedisInstance *ri) {
 char *sentinelHandleConfiguration(char **argv, int argc) {
     sentinelRedisInstance *ri;
 
-    if (!strcasecmp(argv[0],"monitor") && argc == 5) {
-        /* monitor <name> <host> <port> <quorum> */
+    if (!strcasecmp(argv[0],"monitor") && argc == 8) {
+        /* monitor <name> <host> <port> <quorum> <user> <password> <mysql-role>*/
         int quorum = atoi(argv[4]);
 
         if (quorum <= 0) return "Quorum must be 1 or greater.";
         if (createSentinelRedisInstance(argv[1],SRI_MASTER,argv[2],
-                                        atoi(argv[3]),quorum,NULL) == NULL)
+                                        atoi(argv[3]),quorum,NULL,argv[5],argv[6],argv[7]) == NULL)
         {
             switch(errno) {
             case EBUSY: return "Duplicated master name.";
@@ -1625,7 +2146,15 @@ char *sentinelHandleConfiguration(char **argv, int argc) {
             return "Client reconfiguration script seems non existing or "
                    "non executable.";
         ri->client_reconfig_script = sdsnew(argv[2]);
-   } else if (!strcasecmp(argv[0],"auth-pass") && argc == 3) {
+   }else if (!strcasecmp(argv[0],"mysql-failover-script") && argc == 3) {
+        /* mysql-failover-script <name> <path> */
+        ri = sentinelGetMasterByName(argv[1]);
+        if (!ri) return "No such master with specified name.";
+        if (access(argv[2],X_OK) == -1)
+            return "Mysql failover script seems non existing or "
+                   "non executable.";
+        ri->mysql_failover_script = sdsnew(argv[2]);
+   }else if (!strcasecmp(argv[0],"auth-pass") && argc == 3) {
         /* auth-pass <name> <password> */
         ri = sentinelGetMasterByName(argv[1]);
         if (!ri) return "No such master with specified name.";
@@ -1661,7 +2190,7 @@ char *sentinelHandleConfiguration(char **argv, int argc) {
         ri = sentinelGetMasterByName(argv[1]);
         if (!ri) return "No such master with specified name.";
         if ((slave = createSentinelRedisInstance(NULL,SRI_SLAVE,argv[2],
-                    atoi(argv[3]), ri->quorum, ri)) == NULL)
+                    atoi(argv[3]), ri->quorum, ri,NULL,NULL,NULL)) == NULL)
         {
             return "Wrong hostname or port for slave.";
         }
@@ -1674,7 +2203,7 @@ char *sentinelHandleConfiguration(char **argv, int argc) {
             ri = sentinelGetMasterByName(argv[1]);
             if (!ri) return "No such master with specified name.";
             if ((si = createSentinelRedisInstance(argv[4],SRI_SENTINEL,argv[2],
-                        atoi(argv[3]), ri->quorum, ri)) == NULL)
+                        atoi(argv[3]), ri->quorum, ri,NULL,NULL,NULL)) == NULL)
             {
                 return "Wrong hostname or port for sentinel.";
             }
@@ -1706,6 +2235,8 @@ char *sentinelHandleConfiguration(char **argv, int argc) {
  * Sentinel across restarts: config epoch of masters, associated slaves
  * and sentinel instances, and so forth. */
 void rewriteConfigSentinelOption(struct rewriteConfigState *state) {
+    //never rewrite config in mysql sentinel mode
+    return;
     dictIterator *di, *di2;
     dictEntry *de;
     sds line;
@@ -1729,9 +2260,9 @@ void rewriteConfigSentinelOption(struct rewriteConfigState *state) {
         /* sentinel monitor */
         master = dictGetVal(de);
         master_addr = sentinelGetCurrentMasterAddress(master);
-        line = sdscatprintf(sdsempty(),"sentinel monitor %s %s %d %d",
+        line = sdscatprintf(sdsempty(),"sentinel monitor %s %s %d %d %s %s %s",
             master->name, master_addr->ip, master_addr->port,
-            master->quorum);
+            master->quorum, master->mysql_user, master->mysql_passwd, master->mysql_role);
         rewriteConfigRewriteLine(state,"sentinel",line,1);
 
         /* sentinel down-after-milliseconds */
@@ -1926,63 +2457,86 @@ void sentinelReconnectInstance(sentinelRedisInstance *ri) {
     ri->link->last_reconn_time = now;
 
     /* Commands connection. */
-    if (link->cc == NULL) {
-        link->cc = redisAsyncConnectBind(ri->addr->ip,ri->addr->port,NET_FIRST_BIND_ADDR);
-        if (link->cc->err) {
-            sentinelEvent(LL_DEBUG,"-cmd-link-reconnection",ri,"%@ #%s",
-                link->cc->errstr);
-            instanceLinkCloseConnection(link,link->cc);
-        } else {
-            link->pending_commands = 0;
-            link->cc_conn_time = mstime();
-            link->cc->data = link;
-            redisAeAttach(server.el,link->cc);
-            redisAsyncSetConnectCallback(link->cc,
-                    sentinelLinkEstablishedCallback);
-            redisAsyncSetDisconnectCallback(link->cc,
-                    sentinelDisconnectCallback);
-            sentinelSendAuthIfNeeded(ri,link->cc);
-            sentinelSetClientName(ri,link->cc,"cmd");
-
-            /* Send a PING ASAP when reconnecting. */
-            sentinelSendPing(ri);
-        }
-    }
-    /* Pub / Sub */
-    if ((ri->flags & (SRI_MASTER|SRI_SLAVE)) && link->pc == NULL) {
-        link->pc = redisAsyncConnectBind(ri->addr->ip,ri->addr->port,NET_FIRST_BIND_ADDR);
-        if (link->pc->err) {
-            sentinelEvent(LL_DEBUG,"-pubsub-link-reconnection",ri,"%@ #%s",
-                link->pc->errstr);
-            instanceLinkCloseConnection(link,link->pc);
-        } else {
-            int retval;
-
-            link->pc_conn_time = mstime();
-            link->pc->data = link;
-            redisAeAttach(server.el,link->pc);
-            redisAsyncSetConnectCallback(link->pc,
-                    sentinelLinkEstablishedCallback);
-            redisAsyncSetDisconnectCallback(link->pc,
-                    sentinelDisconnectCallback);
-            sentinelSendAuthIfNeeded(ri,link->pc);
-            sentinelSetClientName(ri,link->pc,"pubsub");
-            /* Now we subscribe to the Sentinels "Hello" channel. */
-            retval = redisAsyncCommand(link->pc,
-                sentinelReceiveHelloMessages, ri, "SUBSCRIBE %s",
-                    SENTINEL_HELLO_CHANNEL);
-            if (retval != C_OK) {
-                /* If we can't subscribe, the Pub/Sub connection is useless
-                 * and we can simply disconnect it and try again. */
-                instanceLinkCloseConnection(link,link->pc);
-                return;
+    if(ri->flags & SRI_SENTINEL){
+        if (link->cc == NULL) {
+            link->cc = redisAsyncConnectBind(ri->addr->ip,ri->addr->port,NET_FIRST_BIND_ADDR);
+            if (link->cc->err) {
+                sentinelEvent(LL_DEBUG,"-cmd-link-reconnection",ri,"%@ #%s",
+                              link->cc->errstr);
+                instanceLinkCloseConnection(link,link->cc);
+            } else {
+                link->pending_commands = 0;
+                link->cc_conn_time = mstime();
+                link->cc->data = link;
+                //If this is a mysql instance,it is unnecessary to set redis callback
+                redisAeAttach(server.el,link->cc);
+                redisAsyncSetConnectCallback(link->cc,
+                                             sentinelLinkEstablishedCallback);
+                redisAsyncSetDisconnectCallback(link->cc,
+                                                sentinelDisconnectCallback);
+                sentinelSendAuthIfNeeded(ri,link->cc);
+                sentinelSetClientName(ri,link->cc,"cmd");
+                
+                /* Send a PING ASAP when reconnecting. */
+                sentinelSendPing(ri);
             }
         }
+    }else{
+        /* mysql connection*/
+        if (link->mc != NULL){
+            instanceLinkCloseMysqlConnection(link, link->mc);
+        }
+        if (link->mc == NULL){
+            link->mc = mysqlAsyncConnectionInit(ri->addr->ip, ri->addr->port);
+            link->mc_conn_time = mstime();
+            mysqlAsyncConnectionHandler(ri,link->mc);
+        }
     }
+    
+    /* Pub / Sub */
+    //We need not sub/pub connection in mysql sentinel mode, instead of insertion into mysql.mysql_sentinels table to subscribe to find the others mysql sentinels.
+    if ((ri->flags & (SRI_MASTER)) && link->pc == NULL) {
+        link->pc = mysqlAsyncConnectionInit(ri->addr->ip, ri->addr->port);
+        link->pc_conn_time = mstime();
+        mysqlAsyncPubSubConnectionHandler(ri,link->pc);
+    }
+//        if (link->pc->err) {
+//            sentinelEvent(LL_DEBUG,"-pubsub-link-reconnection",ri,"%@ #%s",
+//                link->pc->errstr);
+//            instanceLinkCloseConnection(link,link->pc);
+//        } else {
+//            int retval;
+//
+//            link->pc_conn_time = mstime();
+//            link->pc->data = link;
+//            redisAeAttach(server.el,link->pc);
+//            redisAsyncSetConnectCallback(link->pc,
+//                    sentinelLinkEstablishedCallback);
+//            redisAsyncSetDisconnectCallback(link->pc,
+//                    sentinelDisconnectCallback);
+//            sentinelSendAuthIfNeeded(ri,link->pc);
+//            sentinelSetClientName(ri,link->pc,"pubsub");
+//            /* Now we subscribe to the Sentinels "Hello" channel. */
+//            retval = redisAsyncCommand(link->pc,
+//                sentinelReceiveHelloMessages, ri, "SUBSCRIBE %s",
+//                    SENTINEL_HELLO_CHANNEL);
+//            if (retval != C_OK) {
+//                /* If we can't subscribe, the Pub/Sub connection is useless
+//                 * and we can simply disconnect it and try again. */
+//                instanceLinkCloseConnection(link,link->pc);
+//                return;
+//            }
+//        }
+//    }
     /* Clear the disconnected status only if we have both the connections
      * (or just the commands connection if this is a sentinel instance). */
-    if (link->cc && (ri->flags & SRI_SENTINEL || link->pc))
-        link->disconnected = 0;
+    if (ri->flags & SRI_SENTINEL){
+        if(link->cc){
+            link->disconnected = 0;
+        }
+    }
+    //if (link->cc && (ri->flags & SRI_SENTINEL || link->pc))
+    //    link->disconnected = 0;
 }
 
 /* ======================== Redis instances pinging  ======================== */
@@ -2065,7 +2619,7 @@ void sentinelRefreshInstanceInfo(sentinelRedisInstance *ri, const char *info) {
              * otherwise add it. */
             if (sentinelRedisInstanceLookupSlave(ri,ip,atoi(port)) == NULL) {
                 if ((slave = createSentinelRedisInstance(NULL,SRI_SLAVE,ip,
-                            atoi(port), ri->quorum, ri)) != NULL)
+                            atoi(port), ri->quorum, ri,NULL,NULL,NULL)) != NULL)
                 {
                     sentinelEvent(LL_NOTICE,"+slave",slave,"%@");
                     sentinelFlushConfig();
@@ -2382,7 +2936,7 @@ void sentinelProcessHelloMessage(char *hello, int hello_len) {
 
             /* Add the new sentinel. */
             si = createSentinelRedisInstance(token[2],SRI_SENTINEL,
-                            token[0],port,master->quorum,master);
+                            token[0],port,master->quorum,master,NULL,NULL,NULL);
 
             if (si) {
                 if (!removed) sentinelEvent(LL_NOTICE,"+sentinel",si,"%@");
@@ -2518,6 +3072,31 @@ int sentinelSendHello(sentinelRedisInstance *ri) {
     return C_OK;
 }
 
+/* Send an "insert into mysql.sentinels" sql via Pub/Sub connection to the specified 'ri' MySQL
+ * instance in order to broadcast the current configuraiton for this
+ * master, and to advertise the existence of this Sentinel at the same time.
+ *
+ * SQL format:
+ *
+ * insert into mysql.sentinels
+ (sentinel_ip,sentinel_port,sentinel_runid,current_epoch,master_name,master_ip,master_port,master_config_epoch) values
+ (announce_ip,announce_port,sentinel.myid,master_name,master_ip,master_port)
+ *
+ * Returns C_OK if the PUBLISH was queued correctly, otherwise
+ * C_ERR is returned. */
+int sentinelSendMysqlHello(sentinelRedisInstance *ri) {
+    int retval;
+    //sentinelRedisInstance *master = (ri->flags & SRI_MASTER) ? ri : ri->master;
+    //sentinelAddr *master_addr = sentinelGetCurrentMasterAddress(master);
+    
+    if (ri->link->disconnected) return C_ERR;
+    
+    /* Format and send the Hello message. */
+    retval = mysqlAsyncPublishHandler(ri, ri->link->pc);
+    if (retval != C_OK) return C_ERR;
+    return C_OK;
+}
+
 /* Reset last_pub_time in all the instances in the specified dictionary
  * in order to force the delivery of an Hello update ASAP. */
 void sentinelForceHelloUpdateDictOfRedisInstances(dict *instances) {
@@ -2572,12 +3151,28 @@ int sentinelSendPing(sentinelRedisInstance *ri) {
     }
 }
 
+int sentinelSendPingMysql(sentinelRedisInstance *ri) {
+    int retval = mysqlAsyncPingHandler(ri,ri->link->mc);
+    ri->link->last_ping_time = mstime();
+    if (retval == C_OK) {
+        /* We update the active ping time only if we received the pong for
+         * the previous ping, otherwise we are technically waiting since the
+         * first ping that did not received a reply. */
+        if (ri->link->act_ping_time == 0)
+            ri->link->act_ping_time = ri->link->last_ping_time;
+        //serverLog(LL_WARNING,"sentinelSendPingMysql connected done");
+        return 1;
+    } else {
+        //serverLog(LL_WARNING,"sentinelSendPingMysql disconnected done");
+        return 0;
+    }
+}
+
 /* Send periodic PING, INFO, and PUBLISH to the Hello channel to
  * the specified master or slave instance. */
 void sentinelSendPeriodicCommands(sentinelRedisInstance *ri) {
     mstime_t now = mstime();
     mstime_t info_period, ping_period;
-    int retval;
 
     /* Return ASAP if we have already a PING or INFO already pending, or
      * in the case the instance is not properly connected. */
@@ -2615,25 +3210,37 @@ void sentinelSendPeriodicCommands(sentinelRedisInstance *ri) {
     ping_period = ri->down_after_period;
     if (ping_period > SENTINEL_PING_PERIOD) ping_period = SENTINEL_PING_PERIOD;
 
-    /* Send INFO to masters and slaves, not sentinels. */
-    if ((ri->flags & SRI_SENTINEL) == 0 &&
+    //TODO@zhangyanjun:refresh mysql master info only
+    /* Send INFO to masters and slaves, not sentinels. ignore for mysql master and slave*/
+    /*if ((ri->flags & SRI_SENTINEL) == 0 &&
         (ri->info_refresh == 0 ||
         (now - ri->info_refresh) > info_period))
     {
         retval = redisAsyncCommand(ri->link->cc,
             sentinelInfoReplyCallback, ri, "INFO");
         if (retval == C_OK) ri->link->pending_commands++;
-    }
+    }*/
 
     /* Send PING to all the three kinds of instances. */
     if ((now - ri->link->last_pong_time) > ping_period &&
                (now - ri->link->last_ping_time) > ping_period/2) {
-        sentinelSendPing(ri);
+        //ping redis/sentinel
+        if(ri->flags & SRI_SENTINEL){
+            sentinelSendPing(ri);
+        }else{
+            //ping mysql
+            sentinelSendPingMysql(ri);
+        }
     }
 
     /* PUBLISH hello messages to all the three kinds of instances. */
+    /*It no longer needed for mysql ,that is implemeted in call back*/
     if ((now - ri->last_pub_time) > SENTINEL_PUBLISH_PERIOD) {
-        sentinelSendHello(ri);
+        if(ri->flags & SRI_MASTER){
+            //sentinelSendHello(ri);
+            if(ri->link->pc)
+                sentinelSendMysqlHello(ri);
+        }
     }
 }
 
@@ -2648,6 +3255,8 @@ const char *sentinelFailoverStateStr(int state) {
     case SENTINEL_FAILOVER_STATE_WAIT_PROMOTION: return "wait_promotion";
     case SENTINEL_FAILOVER_STATE_RECONF_SLAVES: return "reconf_slaves";
     case SENTINEL_FAILOVER_STATE_UPDATE_CONFIG: return "update_config";
+    case SENTINEL_FAILOVER_RUN_SWITCH_SCRIPT: return "run_switch_script";
+    case SENTINEL_FAILOVER_SWITCH_SCRIPT_STARTED: return "switch_script_started";
     default: return "unknown";
     }
 }
@@ -2790,6 +3399,12 @@ void addReplySentinelRedisInstance(client *c, sentinelRedisInstance *ri) {
         if (ri->client_reconfig_script) {
             addReplyBulkCString(c,"client-reconfig-script");
             addReplyBulkCString(c,ri->client_reconfig_script);
+            fields++;
+        }
+        
+        if (ri->mysql_failover_script) {
+            addReplyBulkCString(c,"mysql-failover-script");
+            addReplyBulkCString(c,ri->mysql_failover_script);
             fields++;
         }
     }
@@ -3027,12 +3642,12 @@ void sentinelCommand(client *c) {
         if (c->argc != 2) goto numargserr;
         sentinelPendingScriptsCommand(c);
     } else if (!strcasecmp(c->argv[1]->ptr,"monitor")) {
-        /* SENTINEL MONITOR <name> <ip> <port> <quorum> */
+        /* SENTINEL MONITOR <name> <ip> <port> <quorum> <mysql_user> <mysql_passwd> <mysql_role>*/
         sentinelRedisInstance *ri;
         long quorum, port;
         char ip[NET_IP_STR_LEN];
 
-        if (c->argc != 6) goto numargserr;
+        if (c->argc != 9) goto numargserr;
         if (getLongFromObjectOrReply(c,c->argv[5],&quorum,"Invalid quorum")
             != C_OK) return;
         if (getLongFromObjectOrReply(c,c->argv[4],&port,"Invalid port")
@@ -3053,7 +3668,7 @@ void sentinelCommand(client *c) {
 
         /* Parameters are valid. Try to create the master instance. */
         ri = createSentinelRedisInstance(c->argv[2]->ptr,SRI_MASTER,
-                c->argv[3]->ptr,port,quorum,NULL);
+            c->argv[3]->ptr,port,quorum,NULL,c->argv[6]->ptr,c->argv[7]->ptr,c->argv[8]->ptr);
         if (ri == NULL) {
             switch(errno) {
             case EBUSY:
@@ -3068,7 +3683,7 @@ void sentinelCommand(client *c) {
             }
         } else {
             sentinelFlushConfig();
-            sentinelEvent(LL_WARNING,"+monitor",ri,"%@ quorum %d",ri->quorum);
+            sentinelEvent(LL_WARNING,"+monitor",ri,"%@ quorum %d,%s,%s,%s",ri->quorum,ri->mysql_user,"xxxxx",ri->mysql_role);
             addReply(c,shared.ok);
         }
     } else if (!strcasecmp(c->argv[1]->ptr,"flushconfig")) {
@@ -3384,7 +3999,27 @@ void sentinelSetCommand(client *c) {
             sdsfree(ri->client_reconfig_script);
             ri->client_reconfig_script = strlen(value) ? sdsnew(value) : NULL;
             changes++;
-       } else if (!strcasecmp(option,"auth-pass")) {
+       }else if (!strcasecmp(option,"mysql-failover-script")) {
+            /* mysql-failover-script <path> */
+            if (sentinel.deny_scripts_reconfig) {
+                addReplyError(c,
+                    "Reconfiguration of scripts path is denied for "
+                    "security reasons. Check the deny-scripts-reconfig "
+                    "configuration directive in your Sentinel configuration");
+                return;
+            }
+
+            if (strlen(value) && access(value,X_OK) == -1) {
+                addReplyError(c,
+                    "Client reconfiguration script seems non existing or "
+                    "non executable");
+                if (changes) sentinelFlushConfig();
+                return;
+            }
+            sdsfree(ri->mysql_failover_script);
+            ri->mysql_failover_script = strlen(value) ? sdsnew(value) : NULL;
+            changes++;
+       }else if (!strcasecmp(option,"auth-pass")) {
             /* auth-pass <password> */
             sdsfree(ri->auth_pass);
             ri->auth_pass = strlen(value) ? sdsnew(value) : NULL;
@@ -3468,20 +4103,33 @@ void sentinelCheckSubjectivelyDown(sentinelRedisInstance *ri) {
          SENTINEL_MIN_LINK_RECONNECT_PERIOD &&
         (mstime() - ri->link->pc_last_activity) > (SENTINEL_PUBLISH_PERIOD*3))
     {
-        instanceLinkCloseConnection(ri->link,ri->link->pc);
+        instanceLinkCloseMysqlConnection(ri->link,ri->link->pc);
     }
 
+    if (ri->link->mc &&
+        (mstime() - ri->link->mc_conn_time) >
+        SENTINEL_MIN_LINK_RECONNECT_PERIOD &&
+        //ri->link->act_ping_time != 0 &&
+         /* Ther is a pending ping... */
+        /* The pending ping is delayed, and we did not received
+         * error replies as well. */
+        (mstime() - ri->link->act_ping_time) > (ri->down_after_period/2) &&
+        (mstime() - ri->link->last_pong_time) > (ri->down_after_period/2))
+    {
+        instanceLinkCloseMysqlConnection(ri->link,ri->link->mc);
+    }
+    
     /* Update the SDOWN flag. We believe the instance is SDOWN if:
      *
      * 1) It is not replying.
      * 2) We believe it is a master, it reports to be a slave for enough time
      *    to meet the down_after_period, plus enough time to get two times
      *    INFO report from the instance. */
-    if (elapsed > ri->down_after_period ||
-        (ri->flags & SRI_MASTER &&
-         ri->role_reported == SRI_SLAVE &&
-         mstime() - ri->role_reported_time >
-          (ri->down_after_period+SENTINEL_INFO_PERIOD*2)))
+    if (elapsed > ri->down_after_period &&
+        ri->flags & SRI_MASTER
+         //ri->role_reported == SRI_SLAVE &&
+         //mstime() - ri->role_reported_time > (ri->down_after_period+SENTINEL_INFO_PERIOD*2)
+         )
     {
         /* Is subjectively down */
         if ((ri->flags & SRI_S_DOWN) == 0) {
@@ -4016,9 +4664,10 @@ void sentinelFailoverWaitStart(sentinelRedisInstance *ri) {
     sentinelEvent(LL_WARNING,"+elected-leader",ri,"%@");
     if (sentinel.simfailure_flags & SENTINEL_SIMFAILURE_CRASH_AFTER_ELECTION)
         sentinelSimFailureCrash();
-    ri->failover_state = SENTINEL_FAILOVER_STATE_SELECT_SLAVE;
+    //ri->failover_state = SENTINEL_FAILOVER_STATE_SELECT_SLAVE;
+    ri->failover_state = SENTINEL_FAILOVER_RUN_SWITCH_SCRIPT;
     ri->failover_state_change_time = mstime();
-    sentinelEvent(LL_WARNING,"+failover-state-select-slave",ri,"%@");
+    sentinelEvent(LL_WARNING,"+failover-run-switch-script",ri,"%@");
 }
 
 void sentinelFailoverSelectSlave(sentinelRedisInstance *ri) {
@@ -4224,7 +4873,12 @@ void sentinelFailoverStateMachine(sentinelRedisInstance *ri) {
         case SENTINEL_FAILOVER_STATE_WAIT_START:
             sentinelFailoverWaitStart(ri);
             break;
-        case SENTINEL_FAILOVER_STATE_SELECT_SLAVE:
+        case SENTINEL_FAILOVER_RUN_SWITCH_SCRIPT:
+            sentinelCallMysqlFailoverScript(ri);
+            break;
+        case SENTINEL_FAILOVER_SWITCH_SCRIPT_STARTED:
+            break;
+        /*case SENTINEL_FAILOVER_STATE_SELECT_SLAVE:
             sentinelFailoverSelectSlave(ri);
             break;
         case SENTINEL_FAILOVER_STATE_SEND_SLAVEOF_NOONE:
@@ -4235,7 +4889,7 @@ void sentinelFailoverStateMachine(sentinelRedisInstance *ri) {
             break;
         case SENTINEL_FAILOVER_STATE_RECONF_SLAVES:
             sentinelFailoverReconfNextSlave(ri);
-            break;
+            break;*/
     }
 }
 
@@ -4262,7 +4916,7 @@ void sentinelAbortFailover(sentinelRedisInstance *ri) {
  * in design. The function is called every second.
  * -------------------------------------------------------------------------- */
 
-/* Perform scheduled operations for the specified Redis instance. */
+/* Perform scheduled operations for the specified Mysql/Redis instance. */
 void sentinelHandleRedisInstance(sentinelRedisInstance *ri) {
     /* ========== MONITORING HALF ============ */
     /* Every kind of instance */
@@ -4310,6 +4964,7 @@ void sentinelHandleDictOfRedisInstances(dict *instances) {
         sentinelRedisInstance *ri = dictGetVal(de);
 
         sentinelHandleRedisInstance(ri);
+        //If it is mysql master node,check slave and sentinel health
         if (ri->flags & SRI_MASTER) {
             sentinelHandleDictOfRedisInstances(ri->slaves);
             sentinelHandleDictOfRedisInstances(ri->sentinels);

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap
+# Install script for directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

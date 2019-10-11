@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/mariadb_config/mariadb_config.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/mariadb_config/CMakeFiles/mariadb_config.dir/mariadb_config.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/mariadb_config/mariadb_config.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/mariadb_config/CMakeFiles/mariadb_config.dir/mariadb_config.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

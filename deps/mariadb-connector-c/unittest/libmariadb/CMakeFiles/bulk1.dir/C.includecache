@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/bulk1.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/bulk1.c
 my_test.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/my_test.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/my_test.h
 ma_common.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/ma_common.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/ma_common.h
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/ma_getopt.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/ma_getopt.h
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/my_test.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/my_test.h
 ma_global.h
 -
 ma_sys.h
@@ -24,7 +24,7 @@ mysql.h
 tap.h
 -
 ma_getopt.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/ma_getopt.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/ma_getopt.h
 memory.h
 -
 string.h

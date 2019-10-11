@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/io/remote_io.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/remote_io.dir/plugins/io/remote_io.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/io/remote_io.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/remote_io.dir/plugins/io/remote_io.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

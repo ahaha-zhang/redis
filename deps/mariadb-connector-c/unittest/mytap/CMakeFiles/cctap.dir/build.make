@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # Include any dependencies generated for this target.
 include unittest/mytap/CMakeFiles/cctap.dir/depend.make
@@ -59,16 +59,16 @@ include unittest/mytap/CMakeFiles/cctap.dir/flags.make
 
 unittest/mytap/CMakeFiles/cctap.dir/tap.c.o: unittest/mytap/CMakeFiles/cctap.dir/flags.make
 unittest/mytap/CMakeFiles/cctap.dir/tap.c.o: unittest/mytap/tap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object unittest/mytap/CMakeFiles/cctap.dir/tap.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cctap.dir/tap.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/tap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object unittest/mytap/CMakeFiles/cctap.dir/tap.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cctap.dir/tap.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/tap.c
 
 unittest/mytap/CMakeFiles/cctap.dir/tap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cctap.dir/tap.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/tap.c > CMakeFiles/cctap.dir/tap.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/tap.c > CMakeFiles/cctap.dir/tap.c.i
 
 unittest/mytap/CMakeFiles/cctap.dir/tap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cctap.dir/tap.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/tap.c -o CMakeFiles/cctap.dir/tap.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/tap.c -o CMakeFiles/cctap.dir/tap.c.s
 
 unittest/mytap/CMakeFiles/cctap.dir/tap.c.o.requires:
 
@@ -91,9 +91,9 @@ cctap_EXTERNAL_OBJECTS =
 unittest/mytap/libcctap.a: unittest/mytap/CMakeFiles/cctap.dir/tap.c.o
 unittest/mytap/libcctap.a: unittest/mytap/CMakeFiles/cctap.dir/build.make
 unittest/mytap/libcctap.a: unittest/mytap/CMakeFiles/cctap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libcctap.a"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap && $(CMAKE_COMMAND) -P CMakeFiles/cctap.dir/cmake_clean_target.cmake
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cctap.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libcctap.a"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap && $(CMAKE_COMMAND) -P CMakeFiles/cctap.dir/cmake_clean_target.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cctap.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 unittest/mytap/CMakeFiles/cctap.dir/build: unittest/mytap/libcctap.a
@@ -105,10 +105,10 @@ unittest/mytap/CMakeFiles/cctap.dir/requires: unittest/mytap/CMakeFiles/cctap.di
 .PHONY : unittest/mytap/CMakeFiles/cctap.dir/requires
 
 unittest/mytap/CMakeFiles/cctap.dir/clean:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap && $(CMAKE_COMMAND) -P CMakeFiles/cctap.dir/cmake_clean.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap && $(CMAKE_COMMAND) -P CMakeFiles/cctap.dir/cmake_clean.cmake
 .PHONY : unittest/mytap/CMakeFiles/cctap.dir/clean
 
 unittest/mytap/CMakeFiles/cctap.dir/depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/CMakeFiles/cctap.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/CMakeFiles/cctap.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : unittest/mytap/CMakeFiles/cctap.dir/depend
 

@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb
-# Build directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb
+# Source directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb
+# Build directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

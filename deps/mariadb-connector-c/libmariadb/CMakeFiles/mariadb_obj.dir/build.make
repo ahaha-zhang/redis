@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # Include any dependencies generated for this target.
 include libmariadb/CMakeFiles/mariadb_obj.dir/depend.make
@@ -59,16 +59,16 @@ include libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o: plugins/auth/my_auth.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/my_auth.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/my_auth.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/my_auth.c > CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/my_auth.c > CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/my_auth.c -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/my_auth.c -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o.requires:
 
@@ -83,16 +83,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o.provides.build
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o: plugins/auth/old_password.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/old_password.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/old_password.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/old_password.c > CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/old_password.c > CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/old_password.c -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/old_password.c -o CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o.requires:
 
@@ -107,16 +107,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o.provides.
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o: plugins/pvio/pvio_socket.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/pvio/pvio_socket.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/pvio/pvio_socket.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/pvio/pvio_socket.c > CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/pvio/pvio_socket.c > CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/pvio/pvio_socket.c -o CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/pvio/pvio_socket.c -o CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o.requires:
 
@@ -131,16 +131,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o.provides.b
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o: libmariadb/ma_array.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_array.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_array.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_array.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_array.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_array.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_array.c > CMakeFiles/mariadb_obj.dir/ma_array.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_array.c > CMakeFiles/mariadb_obj.dir/ma_array.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_array.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_array.c -o CMakeFiles/mariadb_obj.dir/ma_array.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_array.c -o CMakeFiles/mariadb_obj.dir/ma_array.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o.requires:
 
@@ -155,16 +155,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o.provides.build: libmariadb/CM
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o: libmariadb/ma_charset.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_charset.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_charset.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_charset.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_charset.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_charset.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_charset.c > CMakeFiles/mariadb_obj.dir/ma_charset.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_charset.c > CMakeFiles/mariadb_obj.dir/ma_charset.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_charset.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_charset.c -o CMakeFiles/mariadb_obj.dir/ma_charset.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_charset.c -o CMakeFiles/mariadb_obj.dir/ma_charset.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o.requires:
 
@@ -179,16 +179,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o.provides.build: libmariadb/
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o: libmariadb/ma_hash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_hash.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_hash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_hash.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_hash.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_hash.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_hash.c > CMakeFiles/mariadb_obj.dir/ma_hash.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_hash.c > CMakeFiles/mariadb_obj.dir/ma_hash.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_hash.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_hash.c -o CMakeFiles/mariadb_obj.dir/ma_hash.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_hash.c -o CMakeFiles/mariadb_obj.dir/ma_hash.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o.requires:
 
@@ -203,16 +203,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o.provides.build: libmariadb/CMa
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o: libmariadb/ma_net.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_net.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_net.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_net.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_net.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_net.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_net.c > CMakeFiles/mariadb_obj.dir/ma_net.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_net.c > CMakeFiles/mariadb_obj.dir/ma_net.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_net.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_net.c -o CMakeFiles/mariadb_obj.dir/ma_net.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_net.c -o CMakeFiles/mariadb_obj.dir/ma_net.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o.requires:
 
@@ -227,16 +227,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o.provides.build: libmariadb/CMak
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o: libmariadb/mariadb_charset.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_charset.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_charset.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/mariadb_charset.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_charset.c > CMakeFiles/mariadb_obj.dir/mariadb_charset.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_charset.c > CMakeFiles/mariadb_obj.dir/mariadb_charset.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/mariadb_charset.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_charset.c -o CMakeFiles/mariadb_obj.dir/mariadb_charset.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_charset.c -o CMakeFiles/mariadb_obj.dir/mariadb_charset.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o.requires:
 
@@ -251,16 +251,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o: libmariadb/ma_time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_time.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_time.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_time.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_time.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_time.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_time.c > CMakeFiles/mariadb_obj.dir/ma_time.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_time.c > CMakeFiles/mariadb_obj.dir/ma_time.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_time.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_time.c -o CMakeFiles/mariadb_obj.dir/ma_time.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_time.c -o CMakeFiles/mariadb_obj.dir/ma_time.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o.requires:
 
@@ -275,16 +275,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o.provides.build: libmariadb/CMa
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o: libmariadb/ma_default.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_default.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_default.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_default.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_default.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_default.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_default.c > CMakeFiles/mariadb_obj.dir/ma_default.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_default.c > CMakeFiles/mariadb_obj.dir/ma_default.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_default.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_default.c -o CMakeFiles/mariadb_obj.dir/ma_default.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_default.c -o CMakeFiles/mariadb_obj.dir/ma_default.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o.requires:
 
@@ -299,16 +299,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o.provides.build: libmariadb/
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o: libmariadb/ma_errmsg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_errmsg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_errmsg.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_errmsg.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_errmsg.c > CMakeFiles/mariadb_obj.dir/ma_errmsg.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_errmsg.c > CMakeFiles/mariadb_obj.dir/ma_errmsg.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_errmsg.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_errmsg.c -o CMakeFiles/mariadb_obj.dir/ma_errmsg.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_errmsg.c -o CMakeFiles/mariadb_obj.dir/ma_errmsg.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o.requires:
 
@@ -323,16 +323,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o.provides.build: libmariadb/C
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o: libmariadb/mariadb_lib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_lib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_lib.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/mariadb_lib.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_lib.c > CMakeFiles/mariadb_obj.dir/mariadb_lib.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_lib.c > CMakeFiles/mariadb_obj.dir/mariadb_lib.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/mariadb_lib.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_lib.c -o CMakeFiles/mariadb_obj.dir/mariadb_lib.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_lib.c -o CMakeFiles/mariadb_obj.dir/mariadb_lib.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o.requires:
 
@@ -347,16 +347,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o.provides.build: libmariadb
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o: libmariadb/ma_list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_list.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_list.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_list.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_list.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_list.c > CMakeFiles/mariadb_obj.dir/ma_list.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_list.c > CMakeFiles/mariadb_obj.dir/ma_list.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_list.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_list.c -o CMakeFiles/mariadb_obj.dir/ma_list.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_list.c -o CMakeFiles/mariadb_obj.dir/ma_list.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o.requires:
 
@@ -371,16 +371,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o.provides.build: libmariadb/CMa
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o: libmariadb/ma_pvio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_pvio.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_pvio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_pvio.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_pvio.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_pvio.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_pvio.c > CMakeFiles/mariadb_obj.dir/ma_pvio.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_pvio.c > CMakeFiles/mariadb_obj.dir/ma_pvio.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_pvio.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_pvio.c -o CMakeFiles/mariadb_obj.dir/ma_pvio.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_pvio.c -o CMakeFiles/mariadb_obj.dir/ma_pvio.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o.requires:
 
@@ -395,16 +395,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o.provides.build: libmariadb/CMa
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o: libmariadb/ma_tls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_tls.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_tls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_tls.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_tls.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_tls.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_tls.c > CMakeFiles/mariadb_obj.dir/ma_tls.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_tls.c > CMakeFiles/mariadb_obj.dir/ma_tls.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_tls.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_tls.c -o CMakeFiles/mariadb_obj.dir/ma_tls.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_tls.c -o CMakeFiles/mariadb_obj.dir/ma_tls.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o.requires:
 
@@ -419,16 +419,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o.provides.build: libmariadb/CMak
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o: libmariadb/ma_alloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_alloc.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_alloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_alloc.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_alloc.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_alloc.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_alloc.c > CMakeFiles/mariadb_obj.dir/ma_alloc.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_alloc.c > CMakeFiles/mariadb_obj.dir/ma_alloc.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_alloc.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_alloc.c -o CMakeFiles/mariadb_obj.dir/ma_alloc.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_alloc.c -o CMakeFiles/mariadb_obj.dir/ma_alloc.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o.requires:
 
@@ -443,16 +443,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o.provides.build: libmariadb/CM
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o: libmariadb/ma_compress.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_compress.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_compress.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_compress.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_compress.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_compress.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_compress.c > CMakeFiles/mariadb_obj.dir/ma_compress.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_compress.c > CMakeFiles/mariadb_obj.dir/ma_compress.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_compress.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_compress.c -o CMakeFiles/mariadb_obj.dir/ma_compress.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_compress.c -o CMakeFiles/mariadb_obj.dir/ma_compress.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o.requires:
 
@@ -467,16 +467,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o.provides.build: libmariadb
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o: libmariadb/ma_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_init.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_init.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_init.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_init.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_init.c > CMakeFiles/mariadb_obj.dir/ma_init.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_init.c > CMakeFiles/mariadb_obj.dir/ma_init.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_init.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_init.c -o CMakeFiles/mariadb_obj.dir/ma_init.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_init.c -o CMakeFiles/mariadb_obj.dir/ma_init.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o.requires:
 
@@ -491,16 +491,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o.provides.build: libmariadb/CMa
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o: libmariadb/ma_password.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_password.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_password.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_password.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_password.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_password.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_password.c > CMakeFiles/mariadb_obj.dir/ma_password.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_password.c > CMakeFiles/mariadb_obj.dir/ma_password.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_password.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_password.c -o CMakeFiles/mariadb_obj.dir/ma_password.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_password.c -o CMakeFiles/mariadb_obj.dir/ma_password.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o.requires:
 
@@ -515,16 +515,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o.provides.build: libmariadb
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o: libmariadb/ma_ll2str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_ll2str.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_ll2str.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_ll2str.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_ll2str.c > CMakeFiles/mariadb_obj.dir/ma_ll2str.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_ll2str.c > CMakeFiles/mariadb_obj.dir/ma_ll2str.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_ll2str.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_ll2str.c -o CMakeFiles/mariadb_obj.dir/ma_ll2str.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_ll2str.c -o CMakeFiles/mariadb_obj.dir/ma_ll2str.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o.requires:
 
@@ -539,16 +539,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o.provides.build: libmariadb/C
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o: libmariadb/ma_sha1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_sha1.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_sha1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_sha1.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_sha1.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_sha1.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_sha1.c > CMakeFiles/mariadb_obj.dir/ma_sha1.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_sha1.c > CMakeFiles/mariadb_obj.dir/ma_sha1.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_sha1.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_sha1.c -o CMakeFiles/mariadb_obj.dir/ma_sha1.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_sha1.c -o CMakeFiles/mariadb_obj.dir/ma_sha1.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o.requires:
 
@@ -563,16 +563,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o.provides.build: libmariadb/CMa
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o: libmariadb/mariadb_stmt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_stmt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_stmt.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_stmt.c > CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_stmt.c > CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_stmt.c -o CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_stmt.c -o CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o.requires:
 
@@ -587,16 +587,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o.provides.build: libmariad
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o: libmariadb/ma_loaddata.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_loaddata.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_loaddata.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_loaddata.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_loaddata.c > CMakeFiles/mariadb_obj.dir/ma_loaddata.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_loaddata.c > CMakeFiles/mariadb_obj.dir/ma_loaddata.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_loaddata.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_loaddata.c -o CMakeFiles/mariadb_obj.dir/ma_loaddata.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_loaddata.c -o CMakeFiles/mariadb_obj.dir/ma_loaddata.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o.requires:
 
@@ -611,16 +611,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o.provides.build: libmariadb
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o: libmariadb/ma_stmt_codec.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_stmt_codec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_stmt_codec.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_stmt_codec.c > CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_stmt_codec.c > CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_stmt_codec.c -o CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_stmt_codec.c -o CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o.requires:
 
@@ -635,16 +635,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o.provides.build: libmaria
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o: libmariadb/ma_string.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_string.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_string.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_string.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_string.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_string.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_string.c > CMakeFiles/mariadb_obj.dir/ma_string.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_string.c > CMakeFiles/mariadb_obj.dir/ma_string.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_string.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_string.c -o CMakeFiles/mariadb_obj.dir/ma_string.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_string.c -o CMakeFiles/mariadb_obj.dir/ma_string.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o.requires:
 
@@ -659,16 +659,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o.provides.build: libmariadb/C
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o: libmariadb/ma_dtoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_dtoa.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_dtoa.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_dtoa.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_dtoa.c > CMakeFiles/mariadb_obj.dir/ma_dtoa.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_dtoa.c > CMakeFiles/mariadb_obj.dir/ma_dtoa.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_dtoa.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_dtoa.c -o CMakeFiles/mariadb_obj.dir/ma_dtoa.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_dtoa.c -o CMakeFiles/mariadb_obj.dir/ma_dtoa.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o.requires:
 
@@ -683,16 +683,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o.provides.build: libmariadb/CMa
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o: libmariadb/ma_client_plugin.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_client_plugin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_client_plugin.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_client_plugin.c > CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_client_plugin.c > CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_client_plugin.c -o CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_client_plugin.c -o CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o.requires:
 
@@ -707,16 +707,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o.provides.build: libma
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o: libmariadb/ma_io.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_io.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_io.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_io.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_io.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_io.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_io.c > CMakeFiles/mariadb_obj.dir/ma_io.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_io.c > CMakeFiles/mariadb_obj.dir/ma_io.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_io.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_io.c -o CMakeFiles/mariadb_obj.dir/ma_io.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_io.c -o CMakeFiles/mariadb_obj.dir/ma_io.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o.requires:
 
@@ -731,16 +731,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o.provides.build: libmariadb/CMake
 
 libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o: libmariadb/secure/openssl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/secure/openssl.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/secure/openssl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/secure/openssl.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/secure/openssl.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/secure/openssl.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/secure/openssl.c > CMakeFiles/mariadb_obj.dir/secure/openssl.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/secure/openssl.c > CMakeFiles/mariadb_obj.dir/secure/openssl.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/secure/openssl.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/secure/openssl.c -o CMakeFiles/mariadb_obj.dir/secure/openssl.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/secure/openssl.c -o CMakeFiles/mariadb_obj.dir/secure/openssl.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o.requires:
 
@@ -755,16 +755,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o.provides.build: libmari
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o: zlib/adler32.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/adler32.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/adler32.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/adler32.c > CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/adler32.c > CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/adler32.c -o CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/adler32.c -o CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o.requires:
 
@@ -779,16 +779,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o: zlib/compress.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/compress.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/compress.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/compress.c > CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/compress.c > CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/compress.c -o CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/compress.c -o CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o.requires:
 
@@ -803,16 +803,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o.provides.build: libma
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o: zlib/crc32.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/crc32.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/crc32.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/crc32.c > CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/crc32.c > CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/crc32.c -o CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/crc32.c -o CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o.requires:
 
@@ -827,16 +827,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o.provides.build: libmaria
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o: zlib/deflate.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/deflate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/deflate.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/deflate.c > CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/deflate.c > CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/deflate.c -o CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/deflate.c -o CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o.requires:
 
@@ -851,16 +851,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o: zlib/gzclose.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzclose.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzclose.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzclose.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzclose.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzclose.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzclose.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o.requires:
 
@@ -875,16 +875,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o: zlib/gzlib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzlib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzlib.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzlib.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzlib.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzlib.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzlib.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o.requires:
 
@@ -899,16 +899,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o.provides.build: libmaria
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o: zlib/gzread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzread.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzread.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzread.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzread.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzread.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzread.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o.requires:
 
@@ -923,16 +923,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o.provides.build: libmari
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o: zlib/gzwrite.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzwrite.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzwrite.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzwrite.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzwrite.c > CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/gzwrite.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/gzwrite.c -o CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o.requires:
 
@@ -947,16 +947,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o: zlib/infback.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/infback.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/infback.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/infback.c > CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/infback.c > CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/infback.c -o CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/infback.c -o CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o.requires:
 
@@ -971,16 +971,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o: zlib/inffast.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inffast.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inffast.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inffast.c > CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inffast.c > CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inffast.c -o CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inffast.c -o CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o.requires:
 
@@ -995,16 +995,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o: zlib/inflate.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inflate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inflate.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inflate.c > CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inflate.c > CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inflate.c -o CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inflate.c -o CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o.requires:
 
@@ -1019,16 +1019,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o: zlib/inftrees.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inftrees.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inftrees.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inftrees.c > CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inftrees.c > CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/inftrees.c -o CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/inftrees.c -o CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o.requires:
 
@@ -1043,16 +1043,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o.provides.build: libma
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o: zlib/trees.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/trees.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/trees.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/trees.c > CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/trees.c > CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/trees.c -o CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/trees.c -o CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o.requires:
 
@@ -1067,16 +1067,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o.provides.build: libmaria
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o: zlib/uncompr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/uncompr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/uncompr.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/uncompr.c > CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/uncompr.c > CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/uncompr.c -o CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/uncompr.c -o CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o.requires:
 
@@ -1091,16 +1091,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o.provides.build: libmar
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o: zlib/zutil.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/zutil.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/zutil.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/zutil.c > CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/zutil.c > CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib/zutil.c -o CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib/zutil.c -o CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o.requires:
 
@@ -1115,16 +1115,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o.provides.build: libmaria
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o: libmariadb/mariadb_dyncol.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_dyncol.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_dyncol.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_dyncol.c > CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_dyncol.c > CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_dyncol.c -o CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_dyncol.c -o CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o.requires:
 
@@ -1139,16 +1139,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o.provides.build: libmari
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o: libmariadb/mariadb_async.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_async.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_async.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/mariadb_async.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_async.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/mariadb_async.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_async.c > CMakeFiles/mariadb_obj.dir/mariadb_async.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_async.c > CMakeFiles/mariadb_obj.dir/mariadb_async.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/mariadb_async.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mariadb_async.c -o CMakeFiles/mariadb_obj.dir/mariadb_async.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mariadb_async.c -o CMakeFiles/mariadb_obj.dir/mariadb_async.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o.requires:
 
@@ -1163,16 +1163,16 @@ libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o.provides.build: libmaria
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o: libmariadb/CMakeFiles/mariadb_obj.dir/flags.make
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o: libmariadb/ma_context.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_context.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_context.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mariadb_obj.dir/ma_context.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_context.c
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mariadb_obj.dir/ma_context.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_context.c > CMakeFiles/mariadb_obj.dir/ma_context.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_context.c > CMakeFiles/mariadb_obj.dir/ma_context.c.i
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mariadb_obj.dir/ma_context.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/ma_context.c -o CMakeFiles/mariadb_obj.dir/ma_context.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/ma_context.c -o CMakeFiles/mariadb_obj.dir/ma_context.c.s
 
 libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o.requires:
 
@@ -1292,10 +1292,10 @@ libmariadb/CMakeFiles/mariadb_obj.dir/requires: libmariadb/CMakeFiles/mariadb_ob
 .PHONY : libmariadb/CMakeFiles/mariadb_obj.dir/requires
 
 libmariadb/CMakeFiles/mariadb_obj.dir/clean:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/mariadb_obj.dir/cmake_clean.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/mariadb_obj.dir/cmake_clean.cmake
 .PHONY : libmariadb/CMakeFiles/mariadb_obj.dir/clean
 
 libmariadb/CMakeFiles/mariadb_obj.dir/depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadb_obj.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadb_obj.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libmariadb/CMakeFiles/mariadb_obj.dir/depend
 

@@ -16,7 +16,7 @@ release_hdr := $(shell sh -c './mkreleasehdr.sh')
 uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
 uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
 OPTIMIZATION?=-O2
-DEPENDENCY_TARGETS=hiredis linenoise lua
+DEPENDENCY_TARGETS=hiredis linenoise lua mariadb-connector-c
 NODEPS:=clean distclean
 
 # Default settings
@@ -107,7 +107,10 @@ endif
 endif
 endif
 # Include paths to dependencies
-FINAL_CFLAGS+= -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src
+FINAL_CFLAGS+= -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src -I../deps/mariadb-connector-c/include -I../deps/mariadb-connector-c/include/mysql -I/usr/local/opt/openssl/include
+
+# Add mariadb client library and dependency
+FINAL_LDFLAGS+= -L/usr/local/opt/openssl/lib -L../deps/mariadb-connector-c/libmariadb/ -lmariadb -liconv -lssl -lcrypto
 
 ifeq ($(MALLOC),tcmalloc)
 	FINAL_CFLAGS+= -DUSE_TCMALLOC

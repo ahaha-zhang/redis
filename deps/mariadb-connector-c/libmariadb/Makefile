@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -115,7 +115,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CPackSourceConfig.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -126,7 +126,7 @@ package_source/fast: package_source
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -148,14 +148,14 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/progress.marks
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles 0
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/progress.marks
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/clean
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/preinstall
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/preinstall
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libmariadb/CMakeFiles/libmariadb.dir/rule:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/CMakeFiles/libmariadb.dir/rule
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/CMakeFiles/libmariadb.dir/rule
 .PHONY : libmariadb/CMakeFiles/libmariadb.dir/rule
 
 # Convenience name for target.
@@ -190,12 +190,12 @@ libmariadb: libmariadb/CMakeFiles/libmariadb.dir/rule
 
 # fast build rule for target.
 libmariadb/fast:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/libmariadb.dir/build.make libmariadb/CMakeFiles/libmariadb.dir/build
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/libmariadb.dir/build.make libmariadb/CMakeFiles/libmariadb.dir/build
 .PHONY : libmariadb/fast
 
 # Convenience name for target.
 libmariadb/CMakeFiles/mariadbclient.dir/rule:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/CMakeFiles/mariadbclient.dir/rule
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/CMakeFiles/mariadbclient.dir/rule
 .PHONY : libmariadb/CMakeFiles/mariadbclient.dir/rule
 
 # Convenience name for target.
@@ -205,12 +205,12 @@ mariadbclient: libmariadb/CMakeFiles/mariadbclient.dir/rule
 
 # fast build rule for target.
 mariadbclient/fast:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadbclient.dir/build.make libmariadb/CMakeFiles/mariadbclient.dir/build
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadbclient.dir/build.make libmariadb/CMakeFiles/mariadbclient.dir/build
 .PHONY : mariadbclient/fast
 
 # Convenience name for target.
 libmariadb/CMakeFiles/mariadb_obj.dir/rule:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/CMakeFiles/mariadb_obj.dir/rule
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 libmariadb/CMakeFiles/mariadb_obj.dir/rule
 .PHONY : libmariadb/CMakeFiles/mariadb_obj.dir/rule
 
 # Convenience name for target.
@@ -220,7 +220,7 @@ mariadb_obj: libmariadb/CMakeFiles/mariadb_obj.dir/rule
 
 # fast build rule for target.
 mariadb_obj/fast:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/build
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/build
 .PHONY : mariadb_obj/fast
 
 __/plugins/auth/my_auth.o: __/plugins/auth/my_auth.c.o
@@ -229,7 +229,7 @@ __/plugins/auth/my_auth.o: __/plugins/auth/my_auth.c.o
 
 # target to build an object file
 __/plugins/auth/my_auth.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o
 .PHONY : __/plugins/auth/my_auth.c.o
 
 __/plugins/auth/my_auth.i: __/plugins/auth/my_auth.c.i
@@ -238,7 +238,7 @@ __/plugins/auth/my_auth.i: __/plugins/auth/my_auth.c.i
 
 # target to preprocess a source file
 __/plugins/auth/my_auth.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.i
 .PHONY : __/plugins/auth/my_auth.c.i
 
 __/plugins/auth/my_auth.s: __/plugins/auth/my_auth.c.s
@@ -247,7 +247,7 @@ __/plugins/auth/my_auth.s: __/plugins/auth/my_auth.c.s
 
 # target to generate assembly for a file
 __/plugins/auth/my_auth.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.s
 .PHONY : __/plugins/auth/my_auth.c.s
 
 __/plugins/auth/old_password.o: __/plugins/auth/old_password.c.o
@@ -256,7 +256,7 @@ __/plugins/auth/old_password.o: __/plugins/auth/old_password.c.o
 
 # target to build an object file
 __/plugins/auth/old_password.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o
 .PHONY : __/plugins/auth/old_password.c.o
 
 __/plugins/auth/old_password.i: __/plugins/auth/old_password.c.i
@@ -265,7 +265,7 @@ __/plugins/auth/old_password.i: __/plugins/auth/old_password.c.i
 
 # target to preprocess a source file
 __/plugins/auth/old_password.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.i
 .PHONY : __/plugins/auth/old_password.c.i
 
 __/plugins/auth/old_password.s: __/plugins/auth/old_password.c.s
@@ -274,7 +274,7 @@ __/plugins/auth/old_password.s: __/plugins/auth/old_password.c.s
 
 # target to generate assembly for a file
 __/plugins/auth/old_password.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.s
 .PHONY : __/plugins/auth/old_password.c.s
 
 __/plugins/pvio/pvio_socket.o: __/plugins/pvio/pvio_socket.c.o
@@ -283,7 +283,7 @@ __/plugins/pvio/pvio_socket.o: __/plugins/pvio/pvio_socket.c.o
 
 # target to build an object file
 __/plugins/pvio/pvio_socket.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o
 .PHONY : __/plugins/pvio/pvio_socket.c.o
 
 __/plugins/pvio/pvio_socket.i: __/plugins/pvio/pvio_socket.c.i
@@ -292,7 +292,7 @@ __/plugins/pvio/pvio_socket.i: __/plugins/pvio/pvio_socket.c.i
 
 # target to preprocess a source file
 __/plugins/pvio/pvio_socket.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.i
 .PHONY : __/plugins/pvio/pvio_socket.c.i
 
 __/plugins/pvio/pvio_socket.s: __/plugins/pvio/pvio_socket.c.s
@@ -301,7 +301,7 @@ __/plugins/pvio/pvio_socket.s: __/plugins/pvio/pvio_socket.c.s
 
 # target to generate assembly for a file
 __/plugins/pvio/pvio_socket.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.s
 .PHONY : __/plugins/pvio/pvio_socket.c.s
 
 __/zlib/adler32.o: __/zlib/adler32.c.o
@@ -310,7 +310,7 @@ __/zlib/adler32.o: __/zlib/adler32.c.o
 
 # target to build an object file
 __/zlib/adler32.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.o
 .PHONY : __/zlib/adler32.c.o
 
 __/zlib/adler32.i: __/zlib/adler32.c.i
@@ -319,7 +319,7 @@ __/zlib/adler32.i: __/zlib/adler32.c.i
 
 # target to preprocess a source file
 __/zlib/adler32.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.i
 .PHONY : __/zlib/adler32.c.i
 
 __/zlib/adler32.s: __/zlib/adler32.c.s
@@ -328,7 +328,7 @@ __/zlib/adler32.s: __/zlib/adler32.c.s
 
 # target to generate assembly for a file
 __/zlib/adler32.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/adler32.c.s
 .PHONY : __/zlib/adler32.c.s
 
 __/zlib/compress.o: __/zlib/compress.c.o
@@ -337,7 +337,7 @@ __/zlib/compress.o: __/zlib/compress.c.o
 
 # target to build an object file
 __/zlib/compress.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.o
 .PHONY : __/zlib/compress.c.o
 
 __/zlib/compress.i: __/zlib/compress.c.i
@@ -346,7 +346,7 @@ __/zlib/compress.i: __/zlib/compress.c.i
 
 # target to preprocess a source file
 __/zlib/compress.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.i
 .PHONY : __/zlib/compress.c.i
 
 __/zlib/compress.s: __/zlib/compress.c.s
@@ -355,7 +355,7 @@ __/zlib/compress.s: __/zlib/compress.c.s
 
 # target to generate assembly for a file
 __/zlib/compress.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/compress.c.s
 .PHONY : __/zlib/compress.c.s
 
 __/zlib/crc32.o: __/zlib/crc32.c.o
@@ -364,7 +364,7 @@ __/zlib/crc32.o: __/zlib/crc32.c.o
 
 # target to build an object file
 __/zlib/crc32.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.o
 .PHONY : __/zlib/crc32.c.o
 
 __/zlib/crc32.i: __/zlib/crc32.c.i
@@ -373,7 +373,7 @@ __/zlib/crc32.i: __/zlib/crc32.c.i
 
 # target to preprocess a source file
 __/zlib/crc32.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.i
 .PHONY : __/zlib/crc32.c.i
 
 __/zlib/crc32.s: __/zlib/crc32.c.s
@@ -382,7 +382,7 @@ __/zlib/crc32.s: __/zlib/crc32.c.s
 
 # target to generate assembly for a file
 __/zlib/crc32.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/crc32.c.s
 .PHONY : __/zlib/crc32.c.s
 
 __/zlib/deflate.o: __/zlib/deflate.c.o
@@ -391,7 +391,7 @@ __/zlib/deflate.o: __/zlib/deflate.c.o
 
 # target to build an object file
 __/zlib/deflate.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.o
 .PHONY : __/zlib/deflate.c.o
 
 __/zlib/deflate.i: __/zlib/deflate.c.i
@@ -400,7 +400,7 @@ __/zlib/deflate.i: __/zlib/deflate.c.i
 
 # target to preprocess a source file
 __/zlib/deflate.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.i
 .PHONY : __/zlib/deflate.c.i
 
 __/zlib/deflate.s: __/zlib/deflate.c.s
@@ -409,7 +409,7 @@ __/zlib/deflate.s: __/zlib/deflate.c.s
 
 # target to generate assembly for a file
 __/zlib/deflate.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/deflate.c.s
 .PHONY : __/zlib/deflate.c.s
 
 __/zlib/gzclose.o: __/zlib/gzclose.c.o
@@ -418,7 +418,7 @@ __/zlib/gzclose.o: __/zlib/gzclose.c.o
 
 # target to build an object file
 __/zlib/gzclose.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.o
 .PHONY : __/zlib/gzclose.c.o
 
 __/zlib/gzclose.i: __/zlib/gzclose.c.i
@@ -427,7 +427,7 @@ __/zlib/gzclose.i: __/zlib/gzclose.c.i
 
 # target to preprocess a source file
 __/zlib/gzclose.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.i
 .PHONY : __/zlib/gzclose.c.i
 
 __/zlib/gzclose.s: __/zlib/gzclose.c.s
@@ -436,7 +436,7 @@ __/zlib/gzclose.s: __/zlib/gzclose.c.s
 
 # target to generate assembly for a file
 __/zlib/gzclose.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzclose.c.s
 .PHONY : __/zlib/gzclose.c.s
 
 __/zlib/gzlib.o: __/zlib/gzlib.c.o
@@ -445,7 +445,7 @@ __/zlib/gzlib.o: __/zlib/gzlib.c.o
 
 # target to build an object file
 __/zlib/gzlib.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.o
 .PHONY : __/zlib/gzlib.c.o
 
 __/zlib/gzlib.i: __/zlib/gzlib.c.i
@@ -454,7 +454,7 @@ __/zlib/gzlib.i: __/zlib/gzlib.c.i
 
 # target to preprocess a source file
 __/zlib/gzlib.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.i
 .PHONY : __/zlib/gzlib.c.i
 
 __/zlib/gzlib.s: __/zlib/gzlib.c.s
@@ -463,7 +463,7 @@ __/zlib/gzlib.s: __/zlib/gzlib.c.s
 
 # target to generate assembly for a file
 __/zlib/gzlib.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzlib.c.s
 .PHONY : __/zlib/gzlib.c.s
 
 __/zlib/gzread.o: __/zlib/gzread.c.o
@@ -472,7 +472,7 @@ __/zlib/gzread.o: __/zlib/gzread.c.o
 
 # target to build an object file
 __/zlib/gzread.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.o
 .PHONY : __/zlib/gzread.c.o
 
 __/zlib/gzread.i: __/zlib/gzread.c.i
@@ -481,7 +481,7 @@ __/zlib/gzread.i: __/zlib/gzread.c.i
 
 # target to preprocess a source file
 __/zlib/gzread.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.i
 .PHONY : __/zlib/gzread.c.i
 
 __/zlib/gzread.s: __/zlib/gzread.c.s
@@ -490,7 +490,7 @@ __/zlib/gzread.s: __/zlib/gzread.c.s
 
 # target to generate assembly for a file
 __/zlib/gzread.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzread.c.s
 .PHONY : __/zlib/gzread.c.s
 
 __/zlib/gzwrite.o: __/zlib/gzwrite.c.o
@@ -499,7 +499,7 @@ __/zlib/gzwrite.o: __/zlib/gzwrite.c.o
 
 # target to build an object file
 __/zlib/gzwrite.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.o
 .PHONY : __/zlib/gzwrite.c.o
 
 __/zlib/gzwrite.i: __/zlib/gzwrite.c.i
@@ -508,7 +508,7 @@ __/zlib/gzwrite.i: __/zlib/gzwrite.c.i
 
 # target to preprocess a source file
 __/zlib/gzwrite.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.i
 .PHONY : __/zlib/gzwrite.c.i
 
 __/zlib/gzwrite.s: __/zlib/gzwrite.c.s
@@ -517,7 +517,7 @@ __/zlib/gzwrite.s: __/zlib/gzwrite.c.s
 
 # target to generate assembly for a file
 __/zlib/gzwrite.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/gzwrite.c.s
 .PHONY : __/zlib/gzwrite.c.s
 
 __/zlib/infback.o: __/zlib/infback.c.o
@@ -526,7 +526,7 @@ __/zlib/infback.o: __/zlib/infback.c.o
 
 # target to build an object file
 __/zlib/infback.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.o
 .PHONY : __/zlib/infback.c.o
 
 __/zlib/infback.i: __/zlib/infback.c.i
@@ -535,7 +535,7 @@ __/zlib/infback.i: __/zlib/infback.c.i
 
 # target to preprocess a source file
 __/zlib/infback.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.i
 .PHONY : __/zlib/infback.c.i
 
 __/zlib/infback.s: __/zlib/infback.c.s
@@ -544,7 +544,7 @@ __/zlib/infback.s: __/zlib/infback.c.s
 
 # target to generate assembly for a file
 __/zlib/infback.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/infback.c.s
 .PHONY : __/zlib/infback.c.s
 
 __/zlib/inffast.o: __/zlib/inffast.c.o
@@ -553,7 +553,7 @@ __/zlib/inffast.o: __/zlib/inffast.c.o
 
 # target to build an object file
 __/zlib/inffast.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.o
 .PHONY : __/zlib/inffast.c.o
 
 __/zlib/inffast.i: __/zlib/inffast.c.i
@@ -562,7 +562,7 @@ __/zlib/inffast.i: __/zlib/inffast.c.i
 
 # target to preprocess a source file
 __/zlib/inffast.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.i
 .PHONY : __/zlib/inffast.c.i
 
 __/zlib/inffast.s: __/zlib/inffast.c.s
@@ -571,7 +571,7 @@ __/zlib/inffast.s: __/zlib/inffast.c.s
 
 # target to generate assembly for a file
 __/zlib/inffast.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inffast.c.s
 .PHONY : __/zlib/inffast.c.s
 
 __/zlib/inflate.o: __/zlib/inflate.c.o
@@ -580,7 +580,7 @@ __/zlib/inflate.o: __/zlib/inflate.c.o
 
 # target to build an object file
 __/zlib/inflate.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.o
 .PHONY : __/zlib/inflate.c.o
 
 __/zlib/inflate.i: __/zlib/inflate.c.i
@@ -589,7 +589,7 @@ __/zlib/inflate.i: __/zlib/inflate.c.i
 
 # target to preprocess a source file
 __/zlib/inflate.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.i
 .PHONY : __/zlib/inflate.c.i
 
 __/zlib/inflate.s: __/zlib/inflate.c.s
@@ -598,7 +598,7 @@ __/zlib/inflate.s: __/zlib/inflate.c.s
 
 # target to generate assembly for a file
 __/zlib/inflate.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inflate.c.s
 .PHONY : __/zlib/inflate.c.s
 
 __/zlib/inftrees.o: __/zlib/inftrees.c.o
@@ -607,7 +607,7 @@ __/zlib/inftrees.o: __/zlib/inftrees.c.o
 
 # target to build an object file
 __/zlib/inftrees.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.o
 .PHONY : __/zlib/inftrees.c.o
 
 __/zlib/inftrees.i: __/zlib/inftrees.c.i
@@ -616,7 +616,7 @@ __/zlib/inftrees.i: __/zlib/inftrees.c.i
 
 # target to preprocess a source file
 __/zlib/inftrees.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.i
 .PHONY : __/zlib/inftrees.c.i
 
 __/zlib/inftrees.s: __/zlib/inftrees.c.s
@@ -625,7 +625,7 @@ __/zlib/inftrees.s: __/zlib/inftrees.c.s
 
 # target to generate assembly for a file
 __/zlib/inftrees.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/inftrees.c.s
 .PHONY : __/zlib/inftrees.c.s
 
 __/zlib/trees.o: __/zlib/trees.c.o
@@ -634,7 +634,7 @@ __/zlib/trees.o: __/zlib/trees.c.o
 
 # target to build an object file
 __/zlib/trees.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.o
 .PHONY : __/zlib/trees.c.o
 
 __/zlib/trees.i: __/zlib/trees.c.i
@@ -643,7 +643,7 @@ __/zlib/trees.i: __/zlib/trees.c.i
 
 # target to preprocess a source file
 __/zlib/trees.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.i
 .PHONY : __/zlib/trees.c.i
 
 __/zlib/trees.s: __/zlib/trees.c.s
@@ -652,7 +652,7 @@ __/zlib/trees.s: __/zlib/trees.c.s
 
 # target to generate assembly for a file
 __/zlib/trees.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/trees.c.s
 .PHONY : __/zlib/trees.c.s
 
 __/zlib/uncompr.o: __/zlib/uncompr.c.o
@@ -661,7 +661,7 @@ __/zlib/uncompr.o: __/zlib/uncompr.c.o
 
 # target to build an object file
 __/zlib/uncompr.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.o
 .PHONY : __/zlib/uncompr.c.o
 
 __/zlib/uncompr.i: __/zlib/uncompr.c.i
@@ -670,7 +670,7 @@ __/zlib/uncompr.i: __/zlib/uncompr.c.i
 
 # target to preprocess a source file
 __/zlib/uncompr.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.i
 .PHONY : __/zlib/uncompr.c.i
 
 __/zlib/uncompr.s: __/zlib/uncompr.c.s
@@ -679,7 +679,7 @@ __/zlib/uncompr.s: __/zlib/uncompr.c.s
 
 # target to generate assembly for a file
 __/zlib/uncompr.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/uncompr.c.s
 .PHONY : __/zlib/uncompr.c.s
 
 __/zlib/zutil.o: __/zlib/zutil.c.o
@@ -688,7 +688,7 @@ __/zlib/zutil.o: __/zlib/zutil.c.o
 
 # target to build an object file
 __/zlib/zutil.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.o
 .PHONY : __/zlib/zutil.c.o
 
 __/zlib/zutil.i: __/zlib/zutil.c.i
@@ -697,7 +697,7 @@ __/zlib/zutil.i: __/zlib/zutil.c.i
 
 # target to preprocess a source file
 __/zlib/zutil.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.i
 .PHONY : __/zlib/zutil.c.i
 
 __/zlib/zutil.s: __/zlib/zutil.c.s
@@ -706,7 +706,7 @@ __/zlib/zutil.s: __/zlib/zutil.c.s
 
 # target to generate assembly for a file
 __/zlib/zutil.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/__/zlib/zutil.c.s
 .PHONY : __/zlib/zutil.c.s
 
 ma_alloc.o: ma_alloc.c.o
@@ -715,7 +715,7 @@ ma_alloc.o: ma_alloc.c.o
 
 # target to build an object file
 ma_alloc.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o
 .PHONY : ma_alloc.c.o
 
 ma_alloc.i: ma_alloc.c.i
@@ -724,7 +724,7 @@ ma_alloc.i: ma_alloc.c.i
 
 # target to preprocess a source file
 ma_alloc.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.i
 .PHONY : ma_alloc.c.i
 
 ma_alloc.s: ma_alloc.c.s
@@ -733,7 +733,7 @@ ma_alloc.s: ma_alloc.c.s
 
 # target to generate assembly for a file
 ma_alloc.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.s
 .PHONY : ma_alloc.c.s
 
 ma_array.o: ma_array.c.o
@@ -742,7 +742,7 @@ ma_array.o: ma_array.c.o
 
 # target to build an object file
 ma_array.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o
 .PHONY : ma_array.c.o
 
 ma_array.i: ma_array.c.i
@@ -751,7 +751,7 @@ ma_array.i: ma_array.c.i
 
 # target to preprocess a source file
 ma_array.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.i
 .PHONY : ma_array.c.i
 
 ma_array.s: ma_array.c.s
@@ -760,7 +760,7 @@ ma_array.s: ma_array.c.s
 
 # target to generate assembly for a file
 ma_array.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.s
 .PHONY : ma_array.c.s
 
 ma_charset.o: ma_charset.c.o
@@ -769,7 +769,7 @@ ma_charset.o: ma_charset.c.o
 
 # target to build an object file
 ma_charset.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o
 .PHONY : ma_charset.c.o
 
 ma_charset.i: ma_charset.c.i
@@ -778,7 +778,7 @@ ma_charset.i: ma_charset.c.i
 
 # target to preprocess a source file
 ma_charset.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.i
 .PHONY : ma_charset.c.i
 
 ma_charset.s: ma_charset.c.s
@@ -787,7 +787,7 @@ ma_charset.s: ma_charset.c.s
 
 # target to generate assembly for a file
 ma_charset.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.s
 .PHONY : ma_charset.c.s
 
 ma_client_plugin.o: ma_client_plugin.c.o
@@ -796,7 +796,7 @@ ma_client_plugin.o: ma_client_plugin.c.o
 
 # target to build an object file
 ma_client_plugin.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o
 .PHONY : ma_client_plugin.c.o
 
 ma_client_plugin.i: ma_client_plugin.c.i
@@ -805,7 +805,7 @@ ma_client_plugin.i: ma_client_plugin.c.i
 
 # target to preprocess a source file
 ma_client_plugin.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.i
 .PHONY : ma_client_plugin.c.i
 
 ma_client_plugin.s: ma_client_plugin.c.s
@@ -814,7 +814,7 @@ ma_client_plugin.s: ma_client_plugin.c.s
 
 # target to generate assembly for a file
 ma_client_plugin.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.s
 .PHONY : ma_client_plugin.c.s
 
 ma_compress.o: ma_compress.c.o
@@ -823,7 +823,7 @@ ma_compress.o: ma_compress.c.o
 
 # target to build an object file
 ma_compress.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o
 .PHONY : ma_compress.c.o
 
 ma_compress.i: ma_compress.c.i
@@ -832,7 +832,7 @@ ma_compress.i: ma_compress.c.i
 
 # target to preprocess a source file
 ma_compress.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.i
 .PHONY : ma_compress.c.i
 
 ma_compress.s: ma_compress.c.s
@@ -841,7 +841,7 @@ ma_compress.s: ma_compress.c.s
 
 # target to generate assembly for a file
 ma_compress.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.s
 .PHONY : ma_compress.c.s
 
 ma_context.o: ma_context.c.o
@@ -850,7 +850,7 @@ ma_context.o: ma_context.c.o
 
 # target to build an object file
 ma_context.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o
 .PHONY : ma_context.c.o
 
 ma_context.i: ma_context.c.i
@@ -859,7 +859,7 @@ ma_context.i: ma_context.c.i
 
 # target to preprocess a source file
 ma_context.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.i
 .PHONY : ma_context.c.i
 
 ma_context.s: ma_context.c.s
@@ -868,7 +868,7 @@ ma_context.s: ma_context.c.s
 
 # target to generate assembly for a file
 ma_context.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.s
 .PHONY : ma_context.c.s
 
 ma_default.o: ma_default.c.o
@@ -877,7 +877,7 @@ ma_default.o: ma_default.c.o
 
 # target to build an object file
 ma_default.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o
 .PHONY : ma_default.c.o
 
 ma_default.i: ma_default.c.i
@@ -886,7 +886,7 @@ ma_default.i: ma_default.c.i
 
 # target to preprocess a source file
 ma_default.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.i
 .PHONY : ma_default.c.i
 
 ma_default.s: ma_default.c.s
@@ -895,7 +895,7 @@ ma_default.s: ma_default.c.s
 
 # target to generate assembly for a file
 ma_default.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.s
 .PHONY : ma_default.c.s
 
 ma_dtoa.o: ma_dtoa.c.o
@@ -904,7 +904,7 @@ ma_dtoa.o: ma_dtoa.c.o
 
 # target to build an object file
 ma_dtoa.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o
 .PHONY : ma_dtoa.c.o
 
 ma_dtoa.i: ma_dtoa.c.i
@@ -913,7 +913,7 @@ ma_dtoa.i: ma_dtoa.c.i
 
 # target to preprocess a source file
 ma_dtoa.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.i
 .PHONY : ma_dtoa.c.i
 
 ma_dtoa.s: ma_dtoa.c.s
@@ -922,7 +922,7 @@ ma_dtoa.s: ma_dtoa.c.s
 
 # target to generate assembly for a file
 ma_dtoa.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.s
 .PHONY : ma_dtoa.c.s
 
 ma_errmsg.o: ma_errmsg.c.o
@@ -931,7 +931,7 @@ ma_errmsg.o: ma_errmsg.c.o
 
 # target to build an object file
 ma_errmsg.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o
 .PHONY : ma_errmsg.c.o
 
 ma_errmsg.i: ma_errmsg.c.i
@@ -940,7 +940,7 @@ ma_errmsg.i: ma_errmsg.c.i
 
 # target to preprocess a source file
 ma_errmsg.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.i
 .PHONY : ma_errmsg.c.i
 
 ma_errmsg.s: ma_errmsg.c.s
@@ -949,7 +949,7 @@ ma_errmsg.s: ma_errmsg.c.s
 
 # target to generate assembly for a file
 ma_errmsg.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.s
 .PHONY : ma_errmsg.c.s
 
 ma_hash.o: ma_hash.c.o
@@ -958,7 +958,7 @@ ma_hash.o: ma_hash.c.o
 
 # target to build an object file
 ma_hash.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.o
 .PHONY : ma_hash.c.o
 
 ma_hash.i: ma_hash.c.i
@@ -967,7 +967,7 @@ ma_hash.i: ma_hash.c.i
 
 # target to preprocess a source file
 ma_hash.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.i
 .PHONY : ma_hash.c.i
 
 ma_hash.s: ma_hash.c.s
@@ -976,7 +976,7 @@ ma_hash.s: ma_hash.c.s
 
 # target to generate assembly for a file
 ma_hash.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_hash.c.s
 .PHONY : ma_hash.c.s
 
 ma_init.o: ma_init.c.o
@@ -985,7 +985,7 @@ ma_init.o: ma_init.c.o
 
 # target to build an object file
 ma_init.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o
 .PHONY : ma_init.c.o
 
 ma_init.i: ma_init.c.i
@@ -994,7 +994,7 @@ ma_init.i: ma_init.c.i
 
 # target to preprocess a source file
 ma_init.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.i
 .PHONY : ma_init.c.i
 
 ma_init.s: ma_init.c.s
@@ -1003,7 +1003,7 @@ ma_init.s: ma_init.c.s
 
 # target to generate assembly for a file
 ma_init.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.s
 .PHONY : ma_init.c.s
 
 ma_io.o: ma_io.c.o
@@ -1012,7 +1012,7 @@ ma_io.o: ma_io.c.o
 
 # target to build an object file
 ma_io.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o
 .PHONY : ma_io.c.o
 
 ma_io.i: ma_io.c.i
@@ -1021,7 +1021,7 @@ ma_io.i: ma_io.c.i
 
 # target to preprocess a source file
 ma_io.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.i
 .PHONY : ma_io.c.i
 
 ma_io.s: ma_io.c.s
@@ -1030,7 +1030,7 @@ ma_io.s: ma_io.c.s
 
 # target to generate assembly for a file
 ma_io.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.s
 .PHONY : ma_io.c.s
 
 ma_list.o: ma_list.c.o
@@ -1039,7 +1039,7 @@ ma_list.o: ma_list.c.o
 
 # target to build an object file
 ma_list.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o
 .PHONY : ma_list.c.o
 
 ma_list.i: ma_list.c.i
@@ -1048,7 +1048,7 @@ ma_list.i: ma_list.c.i
 
 # target to preprocess a source file
 ma_list.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.i
 .PHONY : ma_list.c.i
 
 ma_list.s: ma_list.c.s
@@ -1057,7 +1057,7 @@ ma_list.s: ma_list.c.s
 
 # target to generate assembly for a file
 ma_list.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.s
 .PHONY : ma_list.c.s
 
 ma_ll2str.o: ma_ll2str.c.o
@@ -1066,7 +1066,7 @@ ma_ll2str.o: ma_ll2str.c.o
 
 # target to build an object file
 ma_ll2str.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o
 .PHONY : ma_ll2str.c.o
 
 ma_ll2str.i: ma_ll2str.c.i
@@ -1075,7 +1075,7 @@ ma_ll2str.i: ma_ll2str.c.i
 
 # target to preprocess a source file
 ma_ll2str.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.i
 .PHONY : ma_ll2str.c.i
 
 ma_ll2str.s: ma_ll2str.c.s
@@ -1084,7 +1084,7 @@ ma_ll2str.s: ma_ll2str.c.s
 
 # target to generate assembly for a file
 ma_ll2str.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.s
 .PHONY : ma_ll2str.c.s
 
 ma_loaddata.o: ma_loaddata.c.o
@@ -1093,7 +1093,7 @@ ma_loaddata.o: ma_loaddata.c.o
 
 # target to build an object file
 ma_loaddata.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o
 .PHONY : ma_loaddata.c.o
 
 ma_loaddata.i: ma_loaddata.c.i
@@ -1102,7 +1102,7 @@ ma_loaddata.i: ma_loaddata.c.i
 
 # target to preprocess a source file
 ma_loaddata.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.i
 .PHONY : ma_loaddata.c.i
 
 ma_loaddata.s: ma_loaddata.c.s
@@ -1111,7 +1111,7 @@ ma_loaddata.s: ma_loaddata.c.s
 
 # target to generate assembly for a file
 ma_loaddata.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.s
 .PHONY : ma_loaddata.c.s
 
 ma_net.o: ma_net.c.o
@@ -1120,7 +1120,7 @@ ma_net.o: ma_net.c.o
 
 # target to build an object file
 ma_net.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o
 .PHONY : ma_net.c.o
 
 ma_net.i: ma_net.c.i
@@ -1129,7 +1129,7 @@ ma_net.i: ma_net.c.i
 
 # target to preprocess a source file
 ma_net.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.i
 .PHONY : ma_net.c.i
 
 ma_net.s: ma_net.c.s
@@ -1138,7 +1138,7 @@ ma_net.s: ma_net.c.s
 
 # target to generate assembly for a file
 ma_net.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.s
 .PHONY : ma_net.c.s
 
 ma_password.o: ma_password.c.o
@@ -1147,7 +1147,7 @@ ma_password.o: ma_password.c.o
 
 # target to build an object file
 ma_password.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o
 .PHONY : ma_password.c.o
 
 ma_password.i: ma_password.c.i
@@ -1156,7 +1156,7 @@ ma_password.i: ma_password.c.i
 
 # target to preprocess a source file
 ma_password.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.i
 .PHONY : ma_password.c.i
 
 ma_password.s: ma_password.c.s
@@ -1165,7 +1165,7 @@ ma_password.s: ma_password.c.s
 
 # target to generate assembly for a file
 ma_password.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.s
 .PHONY : ma_password.c.s
 
 ma_pvio.o: ma_pvio.c.o
@@ -1174,7 +1174,7 @@ ma_pvio.o: ma_pvio.c.o
 
 # target to build an object file
 ma_pvio.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o
 .PHONY : ma_pvio.c.o
 
 ma_pvio.i: ma_pvio.c.i
@@ -1183,7 +1183,7 @@ ma_pvio.i: ma_pvio.c.i
 
 # target to preprocess a source file
 ma_pvio.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.i
 .PHONY : ma_pvio.c.i
 
 ma_pvio.s: ma_pvio.c.s
@@ -1192,7 +1192,7 @@ ma_pvio.s: ma_pvio.c.s
 
 # target to generate assembly for a file
 ma_pvio.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.s
 .PHONY : ma_pvio.c.s
 
 ma_sha1.o: ma_sha1.c.o
@@ -1201,7 +1201,7 @@ ma_sha1.o: ma_sha1.c.o
 
 # target to build an object file
 ma_sha1.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o
 .PHONY : ma_sha1.c.o
 
 ma_sha1.i: ma_sha1.c.i
@@ -1210,7 +1210,7 @@ ma_sha1.i: ma_sha1.c.i
 
 # target to preprocess a source file
 ma_sha1.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.i
 .PHONY : ma_sha1.c.i
 
 ma_sha1.s: ma_sha1.c.s
@@ -1219,7 +1219,7 @@ ma_sha1.s: ma_sha1.c.s
 
 # target to generate assembly for a file
 ma_sha1.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.s
 .PHONY : ma_sha1.c.s
 
 ma_stmt_codec.o: ma_stmt_codec.c.o
@@ -1228,7 +1228,7 @@ ma_stmt_codec.o: ma_stmt_codec.c.o
 
 # target to build an object file
 ma_stmt_codec.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o
 .PHONY : ma_stmt_codec.c.o
 
 ma_stmt_codec.i: ma_stmt_codec.c.i
@@ -1237,7 +1237,7 @@ ma_stmt_codec.i: ma_stmt_codec.c.i
 
 # target to preprocess a source file
 ma_stmt_codec.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.i
 .PHONY : ma_stmt_codec.c.i
 
 ma_stmt_codec.s: ma_stmt_codec.c.s
@@ -1246,7 +1246,7 @@ ma_stmt_codec.s: ma_stmt_codec.c.s
 
 # target to generate assembly for a file
 ma_stmt_codec.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.s
 .PHONY : ma_stmt_codec.c.s
 
 ma_string.o: ma_string.c.o
@@ -1255,7 +1255,7 @@ ma_string.o: ma_string.c.o
 
 # target to build an object file
 ma_string.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o
 .PHONY : ma_string.c.o
 
 ma_string.i: ma_string.c.i
@@ -1264,7 +1264,7 @@ ma_string.i: ma_string.c.i
 
 # target to preprocess a source file
 ma_string.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.i
 .PHONY : ma_string.c.i
 
 ma_string.s: ma_string.c.s
@@ -1273,7 +1273,7 @@ ma_string.s: ma_string.c.s
 
 # target to generate assembly for a file
 ma_string.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.s
 .PHONY : ma_string.c.s
 
 ma_time.o: ma_time.c.o
@@ -1282,7 +1282,7 @@ ma_time.o: ma_time.c.o
 
 # target to build an object file
 ma_time.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o
 .PHONY : ma_time.c.o
 
 ma_time.i: ma_time.c.i
@@ -1291,7 +1291,7 @@ ma_time.i: ma_time.c.i
 
 # target to preprocess a source file
 ma_time.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.i
 .PHONY : ma_time.c.i
 
 ma_time.s: ma_time.c.s
@@ -1300,7 +1300,7 @@ ma_time.s: ma_time.c.s
 
 # target to generate assembly for a file
 ma_time.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.s
 .PHONY : ma_time.c.s
 
 ma_tls.o: ma_tls.c.o
@@ -1309,7 +1309,7 @@ ma_tls.o: ma_tls.c.o
 
 # target to build an object file
 ma_tls.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o
 .PHONY : ma_tls.c.o
 
 ma_tls.i: ma_tls.c.i
@@ -1318,7 +1318,7 @@ ma_tls.i: ma_tls.c.i
 
 # target to preprocess a source file
 ma_tls.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.i
 .PHONY : ma_tls.c.i
 
 ma_tls.s: ma_tls.c.s
@@ -1327,7 +1327,7 @@ ma_tls.s: ma_tls.c.s
 
 # target to generate assembly for a file
 ma_tls.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.s
 .PHONY : ma_tls.c.s
 
 mariadb_async.o: mariadb_async.c.o
@@ -1336,7 +1336,7 @@ mariadb_async.o: mariadb_async.c.o
 
 # target to build an object file
 mariadb_async.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o
 .PHONY : mariadb_async.c.o
 
 mariadb_async.i: mariadb_async.c.i
@@ -1345,7 +1345,7 @@ mariadb_async.i: mariadb_async.c.i
 
 # target to preprocess a source file
 mariadb_async.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.i
 .PHONY : mariadb_async.c.i
 
 mariadb_async.s: mariadb_async.c.s
@@ -1354,7 +1354,7 @@ mariadb_async.s: mariadb_async.c.s
 
 # target to generate assembly for a file
 mariadb_async.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.s
 .PHONY : mariadb_async.c.s
 
 mariadb_charset.o: mariadb_charset.c.o
@@ -1363,7 +1363,7 @@ mariadb_charset.o: mariadb_charset.c.o
 
 # target to build an object file
 mariadb_charset.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o
 .PHONY : mariadb_charset.c.o
 
 mariadb_charset.i: mariadb_charset.c.i
@@ -1372,7 +1372,7 @@ mariadb_charset.i: mariadb_charset.c.i
 
 # target to preprocess a source file
 mariadb_charset.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.i
 .PHONY : mariadb_charset.c.i
 
 mariadb_charset.s: mariadb_charset.c.s
@@ -1381,7 +1381,7 @@ mariadb_charset.s: mariadb_charset.c.s
 
 # target to generate assembly for a file
 mariadb_charset.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.s
 .PHONY : mariadb_charset.c.s
 
 mariadb_dyncol.o: mariadb_dyncol.c.o
@@ -1390,7 +1390,7 @@ mariadb_dyncol.o: mariadb_dyncol.c.o
 
 # target to build an object file
 mariadb_dyncol.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.o
 .PHONY : mariadb_dyncol.c.o
 
 mariadb_dyncol.i: mariadb_dyncol.c.i
@@ -1399,7 +1399,7 @@ mariadb_dyncol.i: mariadb_dyncol.c.i
 
 # target to preprocess a source file
 mariadb_dyncol.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.i
 .PHONY : mariadb_dyncol.c.i
 
 mariadb_dyncol.s: mariadb_dyncol.c.s
@@ -1408,7 +1408,7 @@ mariadb_dyncol.s: mariadb_dyncol.c.s
 
 # target to generate assembly for a file
 mariadb_dyncol.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_dyncol.c.s
 .PHONY : mariadb_dyncol.c.s
 
 mariadb_lib.o: mariadb_lib.c.o
@@ -1417,7 +1417,7 @@ mariadb_lib.o: mariadb_lib.c.o
 
 # target to build an object file
 mariadb_lib.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o
 .PHONY : mariadb_lib.c.o
 
 mariadb_lib.i: mariadb_lib.c.i
@@ -1426,7 +1426,7 @@ mariadb_lib.i: mariadb_lib.c.i
 
 # target to preprocess a source file
 mariadb_lib.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.i
 .PHONY : mariadb_lib.c.i
 
 mariadb_lib.s: mariadb_lib.c.s
@@ -1435,7 +1435,7 @@ mariadb_lib.s: mariadb_lib.c.s
 
 # target to generate assembly for a file
 mariadb_lib.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.s
 .PHONY : mariadb_lib.c.s
 
 mariadb_stmt.o: mariadb_stmt.c.o
@@ -1444,7 +1444,7 @@ mariadb_stmt.o: mariadb_stmt.c.o
 
 # target to build an object file
 mariadb_stmt.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o
 .PHONY : mariadb_stmt.c.o
 
 mariadb_stmt.i: mariadb_stmt.c.i
@@ -1453,7 +1453,7 @@ mariadb_stmt.i: mariadb_stmt.c.i
 
 # target to preprocess a source file
 mariadb_stmt.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.i
 .PHONY : mariadb_stmt.c.i
 
 mariadb_stmt.s: mariadb_stmt.c.s
@@ -1462,7 +1462,7 @@ mariadb_stmt.s: mariadb_stmt.c.s
 
 # target to generate assembly for a file
 mariadb_stmt.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.s
 .PHONY : mariadb_stmt.c.s
 
 secure/openssl.o: secure/openssl.c.o
@@ -1471,7 +1471,7 @@ secure/openssl.o: secure/openssl.c.o
 
 # target to build an object file
 secure/openssl.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o
 .PHONY : secure/openssl.c.o
 
 secure/openssl.i: secure/openssl.c.i
@@ -1480,7 +1480,7 @@ secure/openssl.i: secure/openssl.c.i
 
 # target to preprocess a source file
 secure/openssl.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.i
 .PHONY : secure/openssl.c.i
 
 secure/openssl.s: secure/openssl.c.s
@@ -1489,7 +1489,7 @@ secure/openssl.s: secure/openssl.c.s
 
 # target to generate assembly for a file
 secure/openssl.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f libmariadb/CMakeFiles/mariadb_obj.dir/build.make libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.s
 .PHONY : secure/openssl.c.s
 
 # Help Target
@@ -1661,6 +1661,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

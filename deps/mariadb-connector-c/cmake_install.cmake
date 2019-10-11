@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+# Install script for directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,7 +33,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/dialog.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/dialog.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/dialog.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/dialog.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -43,7 +43,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTAL
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/caching_sha2_password.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/caching_sha2_password.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/caching_sha2_password.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/caching_sha2_password.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -53,7 +53,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTAL
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/auth_gssapi_client.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/auth_gssapi_client.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/auth_gssapi_client.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/auth_gssapi_client.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -63,7 +63,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTAL
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/sha256_password.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/sha256_password.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/sha256_password.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/sha256_password.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -73,7 +73,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTAL
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/mysql_clear_password.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/mysql_clear_password.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/mysql_clear_password.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/mysql_clear_password.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -83,7 +83,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTAL
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xClientPluginsx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/remote_io.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin" TYPE MODULE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/remote_io.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/remote_io.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/mariadb/plugin/remote_io.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -94,11 +94,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/include/cmake_install.cmake")
-  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/cmake_install.cmake")
-  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/mariadb_config/cmake_install.cmake")
-  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/cmake_install.cmake")
-  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/cmake_install.cmake")
+  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/include/cmake_install.cmake")
+  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/cmake_install.cmake")
+  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/mariadb_config/cmake_install.cmake")
+  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/cmake_install.cmake")
+  include("/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/cmake_install.cmake")
 
 endif()
 
@@ -110,5 +110,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

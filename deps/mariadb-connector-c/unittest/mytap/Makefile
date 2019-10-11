@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -81,7 +81,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CPackSourceConfig.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -114,7 +114,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -148,14 +148,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/CMakeFiles/progress.marks
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles 0
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/CMakeFiles/progress.marks
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/clean
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/preinstall
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/preinstall
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 unittest/mytap/CMakeFiles/cctap.dir/rule:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/CMakeFiles/cctap.dir/rule
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f CMakeFiles/Makefile2 unittest/mytap/CMakeFiles/cctap.dir/rule
 .PHONY : unittest/mytap/CMakeFiles/cctap.dir/rule
 
 # Convenience name for target.
@@ -190,7 +190,7 @@ cctap: unittest/mytap/CMakeFiles/cctap.dir/rule
 
 # fast build rule for target.
 cctap/fast:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/build
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/build
 .PHONY : cctap/fast
 
 tap.o: tap.c.o
@@ -199,7 +199,7 @@ tap.o: tap.c.o
 
 # target to build an object file
 tap.c.o:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/tap.c.o
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/tap.c.o
 .PHONY : tap.c.o
 
 tap.i: tap.c.i
@@ -208,7 +208,7 @@ tap.i: tap.c.i
 
 # target to preprocess a source file
 tap.c.i:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/tap.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/tap.c.i
 .PHONY : tap.c.i
 
 tap.s: tap.c.s
@@ -217,7 +217,7 @@ tap.s: tap.c.s
 
 # target to generate assembly for a file
 tap.c.s:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/tap.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(MAKE) -f unittest/mytap/CMakeFiles/cctap.dir/build.make unittest/mytap/CMakeFiles/cctap.dir/tap.c.s
 .PHONY : tap.c.s
 
 # Help Target
@@ -249,6 +249,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

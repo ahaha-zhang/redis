@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/auth_gssapi_client.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/auth_gssapi_client.c
 string.h
 -
 stdarg.h
@@ -24,11 +24,11 @@ mysql.h
 stdio.h
 -
 common.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/common.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/common.h
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/common.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/common.h
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_client.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_client.c
 gssapi/gssapi.h
 -
 string.h
@@ -42,9 +42,9 @@ ma_server_error.h
 mysql.h
 -
 gssapi_errmsg.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_errmsg.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_errmsg.h
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_errmsg.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_errmsg.c
 gssapi/gssapi.h
 -
 gssapi.h
@@ -52,7 +52,7 @@ gssapi.h
 string.h
 -
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_errmsg.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_errmsg.h
 
 include/ma_config.h
 

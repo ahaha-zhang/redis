@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/tap.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/tap.c
 tap.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/tap.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/tap.h
 ma_global.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/ma_global.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/ma_global.h
 stdlib.h
 -
 stdarg.h
@@ -22,9 +22,9 @@ string.h
 signal.h
 -
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/tap.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/tap.h
 ma_global.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/ma_global.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/ma_global.h
 
 include/ma_config.h
 

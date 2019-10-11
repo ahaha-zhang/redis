@@ -6,5 +6,5 @@ C_FLAGS = -O2 -g -DNDEBUG -DDBUG_OFF -isysroot /Library/Developer/CommandLineToo
 
 C_DEFINES = -DHAVE_OPENSSL -DHAVE_REMOTEIO=1 -DHAVE_TLS -DLIBICONV_PLUG -DMARIADB_MACHINE_TYPE=\"x86_64\" -DMARIADB_SYSTEM_TYPE=\"Darwin\" -Dlibmariadb_EXPORTS
 
-C_INCLUDES = -I/usr/local/opt/openssl/include -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/include -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/pvio -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/zlib 
+C_INCLUDES = -I/usr/local/opt/openssl/include -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/include -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/pvio -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb -I/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/zlib 
 

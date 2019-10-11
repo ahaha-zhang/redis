@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/mariadb_config
+# Install script for directory: /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/mariadb_config
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,7 +33,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xDevelopmentx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/mariadb_config/mariadb_config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/mariadb_config/mariadb_config")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/mariadb_config" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/mariadb_config")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -43,6 +43,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xDevelopmentx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xDevelopmentx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/mariadb_config/libmariadb.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/mariadb_config/libmariadb.pc")
 endif()
 

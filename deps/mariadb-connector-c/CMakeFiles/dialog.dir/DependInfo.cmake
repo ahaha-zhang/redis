@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/get_password.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/dialog.dir/libmariadb/get_password.c.o"
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/dialog.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/dialog.dir/plugins/auth/dialog.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/get_password.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/dialog.dir/libmariadb/get_password.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/dialog.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/dialog.dir/plugins/auth/dialog.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

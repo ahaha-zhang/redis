@@ -2609,8 +2609,14 @@ int prepareForShutdown(int flags) {
 
     /* Close the listening sockets. Apparently this allows faster restarts. */
     closeListeningSockets(1);
-    serverLog(LL_WARNING,"%s is now ready to exit, bye bye...",
-        server.sentinel_mode ? "Sentinel" : "Redis");
+    if (server.sentinel_mode==1){
+        serverLog(LL_WARNING,"Redis-Sentinel is now ready to exit, bye bye...");
+    }else if(server.sentinel_mode==2){
+        serverLog(LL_WARNING,"MySQL-Sentinel is now ready to exit, bye bye...");
+    }else{
+        serverLog(LL_WARNING,"Redis is now ready to exit, bye bye...");
+    }
+    
     return C_OK;
 }
 
@@ -3855,7 +3861,7 @@ int main(int argc, char **argv) {
             (int)getpid());
 
     if (argc == 1) {
-        serverLog(LL_WARNING, "Warning: no config file specified, using the default config. In order to specify a config file use %s /path/to/%s.conf", argv[0], server.sentinel_mode ? "sentinel" : "redis");
+        serverLog(LL_WARNING, "Warning: no config file specified, using the default config. In order to specify a config file use %s /path/to/%s.conf", argv[0], server.sentinel_mode ? "redis/mysql sentinel mode" : "redis");
     } else {
         serverLog(LL_WARNING, "Configuration loaded");
     }

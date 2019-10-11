@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/auth_gssapi_client.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o"
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_client.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o"
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_errmsg.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/auth_gssapi_client.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_client.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_errmsg.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

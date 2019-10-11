@@ -14,7 +14,6 @@
 #include "mysql.h"
 #include "ae.h"
 
-
 enum MDB_ASYNC_ST { // MariaDB Async State Machine
     ASYNC_CONNECT_START,
     ASYNC_CONNECT_CONT,
@@ -63,50 +62,14 @@ typedef struct mysqlAsyncConnection{
         char *ip;
         int port;
     } addr;
+    int async_fetch_row_start;      //1:YES 0:NO
+    enum MDB_ASYNC_ST async_state_machine;    // Async state machine,mariadb async client status
     
-    int async_fetch_row_start;
-    enum MDB_ASYNC_ST async_state_machine;    // Async state machine
-
-    struct {
-        void *data;
-        
-        /* Hooks that are called when the library expects to start
-         * reading/writing. These functions should be idempotent. */
-        void (*addRead)(void *privdata);
-        void (*delRead)(void *privdata);
-        void (*addWrite)(void *privdata);
-        void (*delWrite)(void *privdata);
-        void (*cleanup)(void *privdata);
-    } ev;
-
 }mysqlAsyncConnection;
 
 mysqlAsyncConnection* mysqlAsyncConnectionInit(mysqlUserInfo *,char* ,int );
 int mysqlAsyncConnectionHandler(mysqlAsyncConnection*);
-void mysqlAsyncConnectionCallback();
-void mysqlAsyncClose(mysqlAsyncConnection*);
-void mysqlAsyncPingHandler(mysqlAsyncConnection*);
-void mysqlAsyncPingCallback();
-void mysqlAsyncQueryHandler(mysqlAsyncConnection*);
-void mysqlAsyncQueryCallback();
-void mysqlAsyncFetchRowHandler(mysqlAsyncConnection*);
-void mysqlAsyncFetchRowCallback();
-void mysqlAsyncHandler(mysqlAsyncConnection *);
-
-//adapter for ae event loop library
-typedef struct mysqlAeEvents {
-    mysqlAsyncConnection *mc;
-    aeEventLoop *loop;
-    int fd;
-    int reading, writing;
-}mysqlAeEvents;
-
-void mysqlAeReadEvent(aeEventLoop *el, int fd, void *privdata, int mask);
-void mysqlAeWriteEvent(aeEventLoop *el, int fd, void *privdata, int mask);
-void mysqlAeAddRead(void *privdata);
-void mysqlAeDelRead(void *privdata);
-void mysqlAeAddWrite(void *privdata);
-void mysqlAeDelWrite(void *privdata);
-void mysqlAeCleanup(void *privdata);
-static int mysqlAeAttach(aeEventLoop *, mysqlAsyncConnection *);
-
+int mysqlAsyncClose(mysqlAsyncConnection*);
+int mysqlAsyncPingHandler(mysqlAsyncConnection*);
+int mysqlAsyncPublishHandler(mysqlAsyncConnection*);
+int mysqlAsyncHandlerCallback(struct aeEventLoop *l,int fd,void *data,int mask);

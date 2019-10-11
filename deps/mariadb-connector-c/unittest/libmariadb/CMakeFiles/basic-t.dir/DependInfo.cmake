@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/basic-t.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/CMakeFiles/basic-t.dir/basic-t.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/basic-t.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/CMakeFiles/basic-t.dir/basic-t.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 
@@ -30,9 +30,9 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/mytap/CMakeFiles/cctap.dir/DependInfo.cmake"
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/CMakeFiles/ma_getopt.dir/DependInfo.cmake"
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/CMakeFiles/mariadbclient.dir/DependInfo.cmake"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/mytap/CMakeFiles/cctap.dir/DependInfo.cmake"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/CMakeFiles/ma_getopt.dir/DependInfo.cmake"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/CMakeFiles/mariadbclient.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

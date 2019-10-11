@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # Include any dependencies generated for this target.
 include CMakeFiles/auth_gssapi_client.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/auth_gssapi_client.dir/flags.make
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o: CMakeFiles/auth_gssapi_client.dir/flags.make
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o: plugins/auth/auth_gssapi_client.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/auth_gssapi_client.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/auth_gssapi_client.c
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/auth_gssapi_client.c > CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/auth_gssapi_client.c > CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.i
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/auth_gssapi_client.c -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/auth_gssapi_client.c -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.s
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/auth_gssapi_client.dir/plugins/auth/auth_gssapi_client.c.o.provides.b
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o: CMakeFiles/auth_gssapi_client.dir/flags.make
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o: plugins/auth/gssapi_client.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_client.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_client.c
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_client.c > CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_client.c > CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.i
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_client.c -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_client.c -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.s
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_client.c.o.provides.build:
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o: CMakeFiles/auth_gssapi_client.dir/flags.make
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o: plugins/auth/gssapi_errmsg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_errmsg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_errmsg.c
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_errmsg.c > CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_errmsg.c > CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.i
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/gssapi_errmsg.c -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/gssapi_errmsg.c -o CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.s
 
 CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o.requires:
 
@@ -143,7 +143,7 @@ auth_gssapi_client.so: CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_cli
 auth_gssapi_client.so: CMakeFiles/auth_gssapi_client.dir/plugins/auth/gssapi_errmsg.c.o
 auth_gssapi_client.so: CMakeFiles/auth_gssapi_client.dir/build.make
 auth_gssapi_client.so: CMakeFiles/auth_gssapi_client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared module auth_gssapi_client.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared module auth_gssapi_client.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/auth_gssapi_client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -162,6 +162,6 @@ CMakeFiles/auth_gssapi_client.dir/clean:
 .PHONY : CMakeFiles/auth_gssapi_client.dir/clean
 
 CMakeFiles/auth_gssapi_client.dir/depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/auth_gssapi_client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/auth_gssapi_client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/auth_gssapi_client.dir/depend
 

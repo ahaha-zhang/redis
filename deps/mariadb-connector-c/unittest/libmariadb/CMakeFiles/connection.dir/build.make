@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # Include any dependencies generated for this target.
 include unittest/libmariadb/CMakeFiles/connection.dir/depend.make
@@ -59,16 +59,16 @@ include unittest/libmariadb/CMakeFiles/connection.dir/flags.make
 
 unittest/libmariadb/CMakeFiles/connection.dir/connection.c.o: unittest/libmariadb/CMakeFiles/connection.dir/flags.make
 unittest/libmariadb/CMakeFiles/connection.dir/connection.c.o: unittest/libmariadb/connection.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object unittest/libmariadb/CMakeFiles/connection.dir/connection.c.o"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/connection.dir/connection.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/connection.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object unittest/libmariadb/CMakeFiles/connection.dir/connection.c.o"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/connection.dir/connection.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/connection.c
 
 unittest/libmariadb/CMakeFiles/connection.dir/connection.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/connection.dir/connection.c.i"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/connection.c > CMakeFiles/connection.dir/connection.c.i
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/connection.c > CMakeFiles/connection.dir/connection.c.i
 
 unittest/libmariadb/CMakeFiles/connection.dir/connection.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/connection.dir/connection.c.s"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/connection.c -o CMakeFiles/connection.dir/connection.c.s
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/connection.c -o CMakeFiles/connection.dir/connection.c.s
 
 unittest/libmariadb/CMakeFiles/connection.dir/connection.c.o.requires:
 
@@ -97,8 +97,8 @@ unittest/libmariadb/connection: /usr/lib/libiconv.dylib
 unittest/libmariadb/connection: /usr/local/opt/openssl/lib/libssl.dylib
 unittest/libmariadb/connection: /usr/local/opt/openssl/lib/libcrypto.dylib
 unittest/libmariadb/connection: unittest/libmariadb/CMakeFiles/connection.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable connection"
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/connection.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable connection"
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/connection.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 unittest/libmariadb/CMakeFiles/connection.dir/build: unittest/libmariadb/connection
@@ -110,10 +110,10 @@ unittest/libmariadb/CMakeFiles/connection.dir/requires: unittest/libmariadb/CMak
 .PHONY : unittest/libmariadb/CMakeFiles/connection.dir/requires
 
 unittest/libmariadb/CMakeFiles/connection.dir/clean:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/connection.dir/cmake_clean.cmake
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb && $(CMAKE_COMMAND) -P CMakeFiles/connection.dir/cmake_clean.cmake
 .PHONY : unittest/libmariadb/CMakeFiles/connection.dir/clean
 
 unittest/libmariadb/CMakeFiles/connection.dir/depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/unittest/libmariadb/CMakeFiles/connection.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/unittest/libmariadb/CMakeFiles/connection.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : unittest/libmariadb/CMakeFiles/connection.dir/depend
 

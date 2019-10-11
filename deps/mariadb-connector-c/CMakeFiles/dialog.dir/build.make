@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_SOURCE_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src
+CMAKE_BINARY_DIR = /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c
 
 # Include any dependencies generated for this target.
 include CMakeFiles/dialog.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/dialog.dir/flags.make
 
 CMakeFiles/dialog.dir/plugins/auth/dialog.c.o: CMakeFiles/dialog.dir/flags.make
 CMakeFiles/dialog.dir/plugins/auth/dialog.c.o: plugins/auth/dialog.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dialog.dir/plugins/auth/dialog.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/dialog.dir/plugins/auth/dialog.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/dialog.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dialog.dir/plugins/auth/dialog.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/dialog.dir/plugins/auth/dialog.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/dialog.c
 
 CMakeFiles/dialog.dir/plugins/auth/dialog.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dialog.dir/plugins/auth/dialog.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/dialog.c > CMakeFiles/dialog.dir/plugins/auth/dialog.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/dialog.c > CMakeFiles/dialog.dir/plugins/auth/dialog.c.i
 
 CMakeFiles/dialog.dir/plugins/auth/dialog.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dialog.dir/plugins/auth/dialog.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/dialog.c -o CMakeFiles/dialog.dir/plugins/auth/dialog.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/dialog.c -o CMakeFiles/dialog.dir/plugins/auth/dialog.c.s
 
 CMakeFiles/dialog.dir/plugins/auth/dialog.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/dialog.dir/plugins/auth/dialog.c.o.provides.build: CMakeFiles/dialog.
 
 CMakeFiles/dialog.dir/libmariadb/get_password.c.o: CMakeFiles/dialog.dir/flags.make
 CMakeFiles/dialog.dir/libmariadb/get_password.c.o: libmariadb/get_password.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dialog.dir/libmariadb/get_password.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/dialog.dir/libmariadb/get_password.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/get_password.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dialog.dir/libmariadb/get_password.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -o CMakeFiles/dialog.dir/libmariadb/get_password.c.o   -c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/get_password.c
 
 CMakeFiles/dialog.dir/libmariadb/get_password.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dialog.dir/libmariadb/get_password.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/get_password.c > CMakeFiles/dialog.dir/libmariadb/get_password.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -E /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/get_password.c > CMakeFiles/dialog.dir/libmariadb/get_password.c.i
 
 CMakeFiles/dialog.dir/libmariadb/get_password.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dialog.dir/libmariadb/get_password.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/get_password.c -o CMakeFiles/dialog.dir/libmariadb/get_password.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -DPLUGIN_DYNAMIC=1  -S /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/get_password.c -o CMakeFiles/dialog.dir/libmariadb/get_password.c.s
 
 CMakeFiles/dialog.dir/libmariadb/get_password.c.o.requires:
 
@@ -117,7 +117,7 @@ dialog.so: CMakeFiles/dialog.dir/plugins/auth/dialog.c.o
 dialog.so: CMakeFiles/dialog.dir/libmariadb/get_password.c.o
 dialog.so: CMakeFiles/dialog.dir/build.make
 dialog.so: CMakeFiles/dialog.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared module dialog.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared module dialog.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dialog.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/dialog.dir/clean:
 .PHONY : CMakeFiles/dialog.dir/clean
 
 CMakeFiles/dialog.dir/depend:
-	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/dialog.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c /Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/dialog.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dialog.dir/depend
 

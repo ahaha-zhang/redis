@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/get_password.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/get_password.c
 ma_global.h
 -
 ma_sys.h
 -
 mysql.h
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/mysql.h
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/mysql.h
 ma_string.h
 -
 mariadb_ctype.h
@@ -26,7 +26,7 @@ termios.h
 conio.h
 -
 
-/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/dialog.c
+/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/dialog.c
 ma_global.h
 -
 mysql.h

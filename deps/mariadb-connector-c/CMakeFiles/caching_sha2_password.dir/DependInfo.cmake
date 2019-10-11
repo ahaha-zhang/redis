@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/libmariadb/secure/openssl_crypt.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/caching_sha2_password.dir/libmariadb/secure/openssl_crypt.c.o"
-  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/plugins/auth/caching_sha2_pw.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c-3.0.9-src/CMakeFiles/caching_sha2_password.dir/plugins/auth/caching_sha2_pw.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/libmariadb/secure/openssl_crypt.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/caching_sha2_password.dir/libmariadb/secure/openssl_crypt.c.o"
+  "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/plugins/auth/caching_sha2_pw.c" "/Users/zhangyanjun/Desktop/test/redis/deps/mariadb-connector-c/CMakeFiles/caching_sha2_password.dir/plugins/auth/caching_sha2_pw.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

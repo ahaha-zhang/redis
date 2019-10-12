@@ -518,7 +518,7 @@ int mysqlAsyncPingHandler(sentinelRedisInstance* master,mysqlAsyncConnection *mc
     
     status = mysql_real_query_start(&mc->err, &mc->mysql, "select 1",0);
     if (mc->err){
-        serverLog(LL_WARNING,"mysql_real_query_start error str:%s",mysql_error(&mc->mysql));
+        serverLog(LL_WARNING,"mysql_real_query_start error str:%s,%s:%d",mysql_error(&mc->mysql),master->addr->ip,master->addr->port);
         master->link->disconnected = 1;
         mc->async_state_machine = ASYNC_CONNECT_FAILED;
         return C_ERR;
@@ -538,7 +538,7 @@ int mysqlAsyncSetSqlLogBinHandler(sentinelRedisInstance* master,mysqlAsyncConnec
         return C_ERR;
     status = mysql_real_query_start(&pc->err, &pc->mysql, "set sql_log_bin=0",0);
     if (pc->err){
-        serverLog(LL_WARNING,"ASYNC_SET_SQL_LOG_BIN_START query error str:%s",mysql_error(&pc->mysql));
+        serverLog(LL_WARNING,"ASYNC_SET_SQL_LOG_BIN_START query error str:%s,%s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
         pc->async_state_machine = ASYNC_CONNECT_FAILED;
     }else{
         status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
@@ -578,7 +578,7 @@ int mysqlAsyncPublishHandler(sentinelRedisInstance* master,mysqlAsyncConnection 
     snprintf(query_str, 256, "replace into mysql_sentinel (sentinel_ip,sentinel_port,sentinel_runid,sentinel_current_epoch,cluster_name,master_ip,master_port,master_config_epoch) values ('%s',%d,'%s',%llu,'%s','%s',%d,%llu)",announce_ip, announce_port, sentinel.myid,(unsigned long long) sentinel.current_epoch,master->name,master->addr->ip,master->addr->port,(unsigned long long) master->config_epoch);
     status = mysql_real_query_start(&pc->err, &pc->mysql,query_str,0);
     if (pc->err){
-        serverLog(LL_WARNING,"mysql_real_query_start query error str:%s",mysql_error(&pc->mysql));
+        serverLog(LL_WARNING,"mysql_real_query_start query error str:%s,%s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
         pc->async_state_machine = ASYNC_CONNECT_FAILED;
     }else{
         status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
@@ -614,9 +614,9 @@ int mysqlAsyncHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mas
             status = mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
             if (!mc->ret_mysql){
-                serverLog(LL_WARNING,"Failed to mysql_real_connect()");
+                serverLog(LL_WARNING,"Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
                 if (mc->err){
-                    serverLog(LL_WARNING,"ASYNC_CONNECT_CONT error str:%s",mysql_error(&mc->mysql));
+                    serverLog(LL_WARNING,"ASYNC_CONNECT_CONT error str:%s,%s:%d",mysql_error(&mc->mysql),master->addr->ip,master->addr->port);
                 }
                 master->link->disconnected = 1;
                 break;
@@ -625,7 +625,7 @@ int mysqlAsyncHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mas
                 if(status == 1){
                     mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
                     if (!mc->ret_mysql)
-                        serverLog(LL_WARNING,"Failed to mysql_real_connect() 2222");
+                        serverLog(LL_WARNING,"Failed to mysql_real_connect() second time %s:%d",master->addr->ip,master->addr->port);
                     status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
                     if(status == AE_OK){
                         mc->async_state_machine = ASYNC_CONNECT_CONT;
@@ -636,7 +636,7 @@ int mysqlAsyncHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mas
                     //mc->errstr = mysql_error(&mc->mysql);
                     //TODO@zhangyanjun:If user privilege error ,ignore
                     master->link->disconnected = 1;
-                    serverLog(LL_WARNING,"mysql_real_connect_cont disconnected done");
+                    serverLog(LL_WARNING,"mysql_real_connect_cont disconnected done %s:%d",master->addr->ip,master->addr->port);
                 }
 
             }else{
@@ -651,14 +651,14 @@ int mysqlAsyncHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mas
             status = mysql_real_query_cont(&mc->err, &mc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
             if (mc->err){
-                serverLog(LL_WARNING,"ASYNC_PING_CONT error str:%s",mysql_error(&mc->mysql));
+                serverLog(LL_WARNING,"ASYNC_PING_CONT error str:%s %s:%d",mysql_error(&mc->mysql),master->addr->ip,master->addr->port);
             }
             if (status){
                 //mc->errstr = mysql_error(&mc->mysql);
                 //TODO@zhangyanjun:If user privilege error ,ignore
                 master->link->disconnected = 1;
                 mc->async_state_machine=ASYNC_CONNECT_START;
-                serverLog(LL_WARNING,"mysql_ping disconnected done");
+                serverLog(LL_WARNING,"mysql_ping disconnected done %s:%d",master->addr->ip,master->addr->port);
             }else{
                 //mc->errstr = mysql_error(&mc->mysql);
                 master->link->disconnected = 0;
@@ -693,15 +693,15 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             status = mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
             if (!pc->ret_mysql)
-                serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect()");
+                serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
             if (pc->err){
-                serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s",mysql_error(&pc->mysql));
+                serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
             }
             if (status){
                 if(status == 1){
                     mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
                     if (!pc->ret_mysql)
-                        serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() 2222");
+                        serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() sencond time %s:%d",master->addr->ip,master->addr->port);
                     aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
                     if(status == AE_OK){
                         pc->async_state_machine = ASYNC_CONNECT_CONT;
@@ -712,7 +712,7 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
                     //pc->errstr = mysql_error(&pc->mysql);
                     //TODO@zhangyanjun:If user privilege error ,ignore
                     master->link->disconnected=1;
-                    serverLog(LL_WARNING,"PubSub mysql_real_connect_cont disconnected done");
+                    serverLog(LL_WARNING,"PubSub mysql_real_connect_cont disconnected done %s:%d",master->addr->ip,master->addr->port);
                     //disconnect
                 }
                 
@@ -727,7 +727,7 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             status = mysql_real_query_cont(&pc->err, &pc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
             if (pc->err){
-                serverLog(LL_WARNING,"PubSub ASYNC_SET_SQL_LOG_BIN_CONT error str:%s",mysql_error(&pc->mysql));
+                serverLog(LL_WARNING,"PubSub ASYNC_SET_SQL_LOG_BIN_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                 master->link->disconnected = 1;
             }else{
                 //pc->errstr = mysql_error(&pc->mysql);
@@ -740,7 +740,7 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             status = mysql_real_query_cont(&pc->err, &pc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
             if (pc->err){
-                serverLog(LL_WARNING,"PubSub ASYNC_PUBLISH_CONT error str:%s",mysql_error(&pc->mysql));
+                serverLog(LL_WARNING,"PubSub ASYNC_PUBLISH_CONT error str:%s %s,%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                 pc->async_state_machine = ASYNC_CONNECT_FAILED;
                 //master->link->disconnected = 1;
             }else{
@@ -751,7 +751,7 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
                 snprintf(subscribe_sql, 512, "select concat(sentinel_ip,',',sentinel_port,',',sentinel_runid,',',sentinel_current_epoch,',',cluster_name,',',master_ip,',',master_port,',',master_config_epoch) as hello from mysql.mysql_sentinel where datachange_lasttime > now() - interval 1 minute and sentinel_runid != '%s'",sentinel.myid);
                 status = mysql_real_query_start(&pc->err, &pc->mysql,subscribe_sql,0);
                 if (pc->err){
-                    serverLog(LL_WARNING,"mysql_real_query_start for sub query error str:%s",mysql_error(&pc->mysql));
+                    serverLog(LL_WARNING,"mysql_real_query_start for sub query error str:%s %s,%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                     pc->async_state_machine = ASYNC_CONNECT_FAILED;
                 }
                 else{
@@ -767,7 +767,7 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             status = mysql_real_query_cont(&pc->err, &pc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
             if (pc->err){
-                serverLog(LL_WARNING,"PubSub ASYNC_SUBSCRIBE_CONT error str:%s",mysql_error(&pc->mysql));
+                serverLog(LL_WARNING,"PubSub ASYNC_SUBSCRIBE_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                 pc->async_state_machine = ASYNC_CONNECT_FAILED;
             }else{
                 master->link->pc_last_activity = mstime();

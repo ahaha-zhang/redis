@@ -37,7 +37,7 @@ distclean:
 	-(cd linenoise && $(MAKE) clean) > /dev/null || true
 	-(cd lua && $(MAKE) clean) > /dev/null || true
 	-(cd jemalloc && [ -f Makefile ] && $(MAKE) distclean) > /dev/null || true
-	-(cd mariadb-connector-c-3.0.9-src && [ -f Makefile ] && $(MAKE) distclean) > /dev/null || true
+	-(cd mariadb-connector-c && [ -f Makefile ] && $(MAKE) clean) > /dev/null || true
 	-(rm -f .make-*)
 
 .PHONY: distclean
@@ -84,6 +84,6 @@ jemalloc: .make-prerequisites
 .PHONY: jemalloc
 
 mariadb-connector-c: .make-prerequisites
-    cd mariadb-connector-c && cmake .
-    CC=${CC} CXX=${CXX} ${MAKE}
+	cd mariadb-connector-c && cmake .
+	CC=${CC} CXX=${CXX} ${MAKE}
 .PHONY: mariadb-connector-c

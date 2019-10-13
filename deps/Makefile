@@ -84,6 +84,5 @@ jemalloc: .make-prerequisites
 .PHONY: jemalloc
 
 mariadb-connector-c: .make-prerequisites
-	cd mariadb-connector-c && cmake .
-	CC=${CC} CXX=${CXX} ${MAKE}
+	cd mariadb-connector-c && rm CMakeCache.txt && cmake . && make clean && make && sudo make install
 .PHONY: mariadb-connector-c

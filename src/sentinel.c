@@ -84,7 +84,7 @@ typedef struct sentinelAddr {
 #define SENTINEL_DEFAULT_SLAVE_PRIORITY 100
 #define SENTINEL_SLAVE_RECONF_TIMEOUT 10000
 #define SENTINEL_DEFAULT_PARALLEL_SYNCS 1
-#define SENTINEL_MIN_LINK_RECONNECT_PERIOD 15000
+#define SENTINEL_MIN_LINK_RECONNECT_PERIOD 3000
 #define SENTINEL_DEFAULT_FAILOVER_TIMEOUT (30*3*1000)
 #define SENTINEL_MAX_PENDING_COMMANDS 100
 #define SENTINEL_ELECTION_TIMEOUT 10000
@@ -2453,7 +2453,7 @@ void sentinelReconnectInstance(sentinelRedisInstance *ri) {
     instanceLink *link = ri->link;
     mstime_t now = mstime();
 
-    if (now - ri->link->last_reconn_time < SENTINEL_PING_PERIOD) return;
+    if (now - ri->link->last_reconn_time < SENTINEL_PING_PERIOD * 3) return;
     ri->link->last_reconn_time = now;
 
     /* Commands connection. */
@@ -2483,9 +2483,9 @@ void sentinelReconnectInstance(sentinelRedisInstance *ri) {
         }
     }else{
         /* mysql connection*/
-        if (link->mc != NULL){
+        /*if (link->mc != NULL){
             instanceLinkCloseMysqlConnection(link, link->mc);
-        }
+        }*/
         if (link->mc == NULL){
             link->mc = mysqlAsyncConnectionInit(ri->addr->ip, ri->addr->port);
             link->mc_conn_time = mstime();
@@ -3154,12 +3154,14 @@ int sentinelSendPing(sentinelRedisInstance *ri) {
 int sentinelSendPingMysql(sentinelRedisInstance *ri) {
     int retval = mysqlAsyncPingHandler(ri,ri->link->mc);
     ri->link->last_ping_time = mstime();
+    if (ri->link->act_ping_time == 0)
+        ri->link->act_ping_time = ri->link->last_ping_time;
     if (retval == C_OK) {
         /* We update the active ping time only if we received the pong for
          * the previous ping, otherwise we are technically waiting since the
          * first ping that did not received a reply. */
-        if (ri->link->act_ping_time == 0)
-            ri->link->act_ping_time = ri->link->last_ping_time;
+        //if (ri->link->act_ping_time == 0)
+        //    ri->link->act_ping_time = ri->link->last_ping_time;
         //serverLog(LL_WARNING,"sentinelSendPingMysql connected done");
         return 1;
     } else {
@@ -4069,7 +4071,7 @@ void sentinelPublishCommand(client *c) {
 /* Is this instance down from our point of view? */
 void sentinelCheckSubjectivelyDown(sentinelRedisInstance *ri) {
     mstime_t elapsed = 0;
-
+    mstime_t now = mstime();
     if (ri->link->act_ping_time)
         elapsed = mstime() - ri->link->act_ping_time;
     else if (ri->link->disconnected)
@@ -4103,19 +4105,26 @@ void sentinelCheckSubjectivelyDown(sentinelRedisInstance *ri) {
          SENTINEL_MIN_LINK_RECONNECT_PERIOD &&
         (mstime() - ri->link->pc_last_activity) > (SENTINEL_PUBLISH_PERIOD*3))
     {
+        serverLog(LL_WARNING,"Disconnectd pc and try to reconnect %s:%d",ri->addr->ip,ri->addr->port);
         instanceLinkCloseMysqlConnection(ri->link,ri->link->pc);
     }
-
+    
+    /*
+    serverLog(LL_WARNING,"now - ri->link->mc_conn_time:%lld",now - ri->link->mc_conn_time);
+    serverLog(LL_WARNING,"ri->link->act_ping_time:%lld",ri->link->act_ping_time);
+    serverLog(LL_WARNING,"now - ri->link->act_ping_time:%lld",now - ri->link->act_ping_time);
+    serverLog(LL_WARNING,"now - ri->link->last_pong_time:%lld",now - ri->link->last_pong_time);
+     */
     if (ri->link->mc &&
-        (mstime() - ri->link->mc_conn_time) >
-        SENTINEL_MIN_LINK_RECONNECT_PERIOD &&
+        (now - ri->link->mc_conn_time) > SENTINEL_MIN_LINK_RECONNECT_PERIOD &&
         //ri->link->act_ping_time != 0 &&
          /* Ther is a pending ping... */
         /* The pending ping is delayed, and we did not received
          * error replies as well. */
-        (mstime() - ri->link->act_ping_time) > (ri->down_after_period/10) &&
-        (mstime() - ri->link->last_pong_time) > (ri->down_after_period/10))
+        //(now - ri->link->act_ping_time) > (ri->down_after_period/10) &&
+        (now - ri->link->last_pong_time) > SENTINEL_MIN_LINK_RECONNECT_PERIOD)
     {
+        serverLog(LL_WARNING,"Disconnectd mc and try to reconnect %s:%d",ri->addr->ip,ri->addr->port);
         instanceLinkCloseMysqlConnection(ri->link,ri->link->mc);
     }
     

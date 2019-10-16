@@ -33,3 +33,16 @@ redis/redis.xcodeproj/*
 .DS_Store
 deps/mariadb-connector-c/CMakeCache.txt
 deps/mariadb-connector-c/unittest/*
+deps/mariadb-connector-c/CMakeFiles/*
+deps/mariadb-connector-c/libmariadb/CMakeFiles/*
+deps/mariadb-connector-c/auth_gssapi_client.so
+deps/mariadb-connector-c/caching_sha2_password.so
+deps/mariadb-connector-c/dialog.so
+deps/mariadb-connector-c/install_manifest.txt
+deps/mariadb-connector-c/libmariadb/libmariadb.3.dylib
+deps/mariadb-connector-c/libmariadb/libmariadb.dylib
+deps/mariadb-connector-c/libmariadb/libmariadbclient.a
+deps/mariadb-connector-c/mariadb_config/mariadb_config
+deps/mariadb-connector-c/mysql_clear_password.so
+deps/mariadb-connector-c/remote_io.so
+deps/mariadb-connector-c/sha256_password.so

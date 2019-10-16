@@ -31,4 +31,5 @@ Makefile.dep
 redis.xcodeproj*
 redis/redis.xcodeproj/*
 .DS_Store
+deps/mariadb-connector-c/CMakeCache.txt
 deps/mariadb-connector-c/unittest/*

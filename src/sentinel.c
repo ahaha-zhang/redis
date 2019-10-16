@@ -575,7 +575,7 @@ int mysqlAsyncPublishHandler(sentinelRedisInstance* master,mysqlAsyncConnection 
     master->name,master_addr->ip,master_addr->port,
     (unsigned long long) master->config_epoch)
     */
-    snprintf(query_str, 256, "replace into mysql_sentinel (sentinel_ip,sentinel_port,sentinel_runid,sentinel_current_epoch,cluster_name,master_ip,master_port,master_config_epoch) values ('%s',%d,'%s',%llu,'%s','%s',%d,%llu)",announce_ip, announce_port, sentinel.myid,(unsigned long long) sentinel.current_epoch,master->name,master->addr->ip,master->addr->port,(unsigned long long) master->config_epoch);
+    snprintf(query_str, 512, "replace into mysql_sentinel (sentinel_ip,sentinel_port,sentinel_runid,sentinel_current_epoch,cluster_name,master_ip,master_port,master_config_epoch) values ('%s',%d,'%s',%llu,'%s','%s',%d,%llu)",announce_ip, announce_port, sentinel.myid,(unsigned long long) sentinel.current_epoch,master->name,master->addr->ip,master->addr->port,(unsigned long long) master->config_epoch);
     status = mysql_real_query_start(&pc->err, &pc->mysql,query_str,0);
     if (pc->err){
         serverLog(LL_WARNING,"mysql_real_query_start query error str:%s,%s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);

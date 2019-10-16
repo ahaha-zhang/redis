@@ -4113,8 +4113,8 @@ void sentinelCheckSubjectivelyDown(sentinelRedisInstance *ri) {
          /* Ther is a pending ping... */
         /* The pending ping is delayed, and we did not received
          * error replies as well. */
-        (mstime() - ri->link->act_ping_time) > (ri->down_after_period/2) &&
-        (mstime() - ri->link->last_pong_time) > (ri->down_after_period/2))
+        (mstime() - ri->link->act_ping_time) > (ri->down_after_period/10) &&
+        (mstime() - ri->link->last_pong_time) > (ri->down_after_period/10))
     {
         instanceLinkCloseMysqlConnection(ri->link,ri->link->mc);
     }

@@ -46,3 +46,7 @@ deps/mariadb-connector-c/mariadb_config/mariadb_config
 deps/mariadb-connector-c/mysql_clear_password.so
 deps/mariadb-connector-c/remote_io.so
 deps/mariadb-connector-c/sha256_password.so
+deps/mariadb-connector-c/*/*/*.cmake
+deps/mariadb-connector-c/*/*.cmake
+deps/mariadb-connector-c/*.cmake
+

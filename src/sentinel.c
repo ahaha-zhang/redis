@@ -613,38 +613,25 @@ int mysqlAsyncHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mas
         case ASYNC_CONNECT_CONT:
             status = mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
-            if (!mc->ret_mysql){
-                serverLog(LL_WARNING,"Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
-                if (mc->err){
-                    serverLog(LL_WARNING,"ASYNC_CONNECT_CONT error str:%s,%s:%d",mysql_error(&mc->mysql),master->addr->ip,master->addr->port);
-                }
-                master->link->disconnected = 1;
-                break;
-            }
             if (status){
-                if(status == 1){
-                    mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
-                    if (!mc->ret_mysql)
-                        serverLog(LL_WARNING,"Failed to mysql_real_connect() second time %s:%d",master->addr->ip,master->addr->port);
-                    status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
-                    if(status == AE_OK){
-                        mc->async_state_machine = ASYNC_CONNECT_CONT;
-                        return 1;
-                    }
-                }else{
-                    mc->err = mysql_errno(&mc->mysql);
-                    //mc->errstr = mysql_error(&mc->mysql);
-                    //TODO@zhangyanjun:If user privilege error ,ignore
-                    master->link->disconnected = 1;
-                    serverLog(LL_WARNING,"mysql_real_connect_cont disconnected done %s:%d",master->addr->ip,master->addr->port);
-                }
-
+                mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
+                status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
+                mc->async_state_machine = ASYNC_CONNECT_CONT;
             }else{
-                master->link->disconnected = 0;
-                master->link->last_avail_time = mstime();
-                master->link->act_ping_time = 0;
-                master->link->last_pong_time = mstime();
-                mc->async_state_machine = ASYNC_PING_START;
+                if (!mc->ret_mysql){
+                    serverLog(LL_WARNING,"Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
+                    if (mc->err){
+                        serverLog(LL_WARNING,"ASYNC_CONNECT_CONT error str:%s,%s:%d",mysql_error(&mc->mysql),master->addr->ip,master->addr->port);
+                    }
+                    master->link->disconnected = 1;
+                    break;
+                }else{
+                    master->link->disconnected = 0;
+                    master->link->last_avail_time = mstime();
+                    master->link->act_ping_time = 0;
+                    master->link->last_pong_time = mstime();
+                    mc->async_state_machine = ASYNC_PING_START;
+                }
             }
             break;
         case ASYNC_PING_CONT:
@@ -692,35 +679,25 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
         case ASYNC_CONNECT_CONT:
             status = mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
             aeDeleteFileEvent(loop,fd,mask);
-            if (!pc->ret_mysql)
-                serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
-            if (pc->err){
-                serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
-            }
             if (status){
-                if(status == 1){
-                    mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
-                    if (!pc->ret_mysql)
-                        serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() sencond time %s:%d",master->addr->ip,master->addr->port);
-                    aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
-                    if(status == AE_OK){
-                        pc->async_state_machine = ASYNC_CONNECT_CONT;
-                        return 1;
-                    }
-                }else{
-                    pc->err = mysql_errno(&pc->mysql);
-                    //pc->errstr = mysql_error(&pc->mysql);
-                    //TODO@zhangyanjun:If user privilege error ,ignore
-                    master->link->disconnected=1;
-                    serverLog(LL_WARNING,"PubSub mysql_real_connect_cont disconnected done %s:%d",master->addr->ip,master->addr->port);
-                    //disconnect
-                }
-                
+                status = mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
+                aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
+                pc->async_state_machine = ASYNC_CONNECT_CONT;
+                return 1;
             }else{
-                master->link->pc_conn_time = mstime();
-                master->link->pc_last_activity = mstime();
-                pc->async_state_machine=ASYNC_SET_SQL_LOG_BIN_START;//SET sql_log_bin =0 after connected
-                mysqlAsyncSetSqlLogBinHandler(master,pc);
+                if (!pc->ret_mysql){
+                    serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
+                    master->link->disconnected=1;
+                    if (pc->err){
+                        serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
+                    }
+                    break;
+                }else{
+                    master->link->pc_conn_time = mstime();
+                    master->link->pc_last_activity = mstime();
+                    pc->async_state_machine=ASYNC_SET_SQL_LOG_BIN_START;//SET sql_log_bin =0 after connected
+                    mysqlAsyncSetSqlLogBinHandler(master,pc);
+                }
             }
             break;
         case ASYNC_SET_SQL_LOG_BIN_CONT:

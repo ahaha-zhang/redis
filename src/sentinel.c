@@ -193,7 +193,8 @@ typedef struct mysqlAsyncConnection{
  * a link with refcount = 1, always. */
 typedef struct instanceLink {
     int refcount;          /* Number of sentinelRedisInstance owners. */
-    int disconnected;      /* Non-zero if we need to reconnect cc or pc. */
+    int disconnected;      /* Non-zero if we need to reconnect cc or mc. */
+    int pc_disconnected;      /* Non-zero if we need to reconnect pc. */
     int pending_commands;  /* Number of commands sent waiting for a reply. */
     redisAsyncContext *cc; /* Hiredis context for commands. */
     mysqlAsyncConnection *pc; /* Hiredis context for Pub / Sub. mariadb-client connection for sub/pub. Mysql version like mc */
@@ -540,6 +541,7 @@ int mysqlAsyncSetSqlLogBinHandler(sentinelRedisInstance* master,mysqlAsyncConnec
     if (pc->err){
         serverLog(LL_WARNING,"ASYNC_SET_SQL_LOG_BIN_START query error str:%s,%s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
         pc->async_state_machine = ASYNC_CONNECT_FAILED;
+        master->link->pc_disconnected = 1;
     }else{
         status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
         if(status == AE_OK){
@@ -670,7 +672,7 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
     char subscribe_sql[512];
     master=(sentinelRedisInstance*)data;
     if(!master->link->pc){
-        master->link->disconnected = 1;
+        master->link->pc_disconnected = 1;
         aeDeleteFileEvent(loop,fd,mask);
         return 0;
     }
@@ -687,14 +689,14 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             }else{
                 if (!pc->ret_mysql){
                     serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
-                    master->link->disconnected=1;
+                    master->link->pc_disconnected = 1;
                     if (pc->err){
                         serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                     }
                     break;
                 }else{
-                    master->link->pc_conn_time = mstime();
                     master->link->pc_last_activity = mstime();
+                    master->link->pc_disconnected = 0;
                     pc->async_state_machine=ASYNC_SET_SQL_LOG_BIN_START;//SET sql_log_bin =0 after connected
                     mysqlAsyncSetSqlLogBinHandler(master,pc);
                 }
@@ -705,10 +707,11 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             aeDeleteFileEvent(loop,fd,mask);
             if (pc->err){
                 serverLog(LL_WARNING,"PubSub ASYNC_SET_SQL_LOG_BIN_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
-                master->link->disconnected = 1;
+                master->link->pc_disconnected = 1;
             }else{
                 //pc->errstr = mysql_error(&pc->mysql);
                 pc->async_state_machine=ASYNC_PUBLISH_START;
+                master->link->pc_disconnected = 0;
                 pc->mysql_result = mysql_use_result(&pc->mysql);
                 mysql_free_result(pc->mysql_result);
             }
@@ -719,24 +722,28 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             if (pc->err){
                 serverLog(LL_WARNING,"PubSub ASYNC_PUBLISH_CONT error str:%s %s,%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                 pc->async_state_machine = ASYNC_CONNECT_FAILED;
-                //master->link->disconnected = 1;
+                master->link->pc_disconnected = 1;
             }else{
                 //pc->errstr = mysql_error(&pc->mysql);
                 master->last_pub_time = mstime();
                 master->link->pc_last_activity = mstime();
+                master->link->pc_disconnected = 0;
                 pc->async_state_machine=ASYNC_SUBSCRIBE_START;
                 snprintf(subscribe_sql, 512, "select concat(sentinel_ip,',',sentinel_port,',',sentinel_runid,',',sentinel_current_epoch,',',cluster_name,',',master_ip,',',master_port,',',master_config_epoch) as hello from mysql.mysql_sentinel where datachange_lasttime > now() - interval 1 minute and sentinel_runid != '%s'",sentinel.myid);
                 status = mysql_real_query_start(&pc->err, &pc->mysql,subscribe_sql,0);
                 if (pc->err){
                     serverLog(LL_WARNING,"mysql_real_query_start for sub query error str:%s %s,%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                     pc->async_state_machine = ASYNC_CONNECT_FAILED;
+                    master->link->pc_disconnected = 1;
                 }
                 else{
                     status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
                     if(status == AE_OK){
                         pc->async_state_machine = ASYNC_SUBSCRIBE_CONT;
-                        return 0;
+                    }else{
+                        master->link->pc_disconnected = 1;
                     }
+                    break;
                 }
             }
             break;
@@ -746,16 +753,21 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
             if (pc->err){
                 serverLog(LL_WARNING,"PubSub ASYNC_SUBSCRIBE_CONT error str:%s %s:%d",mysql_error(&pc->mysql),master->addr->ip,master->addr->port);
                 pc->async_state_machine = ASYNC_CONNECT_FAILED;
+                master->link->pc_disconnected = 1;
             }else{
                 master->link->pc_last_activity = mstime();
+                master->link->pc_disconnected = 0;
                 status = mysql_store_result_start(&pc->mysql_result,&pc->mysql);
                 if (status){
                     pc->async_state_machine = ASYNC_STORE_RESULT_START;
                     status = aeCreateFileEvent(pc->loop,pc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncPubSubHandlerCallback,(void *)master);
                     if(status == AE_OK){
                         pc->async_state_machine = ASYNC_STORE_RESULT_CONT;
-                        return 0;
+                        
+                    }else{
+                        master->link->pc_disconnected = 1;
                     }
+                    break;
                 }else{
                     for(;;){
                         pc->mysql_row = mysql_fetch_row(pc->mysql_result);
@@ -1401,6 +1413,7 @@ instanceLink *createInstanceLink(void) {
 
     link->refcount = 1;
     link->disconnected = 1;
+    link->pc_disconnected = 1;
     link->pending_commands = 0;
     link->cc = NULL;
     link->pc = NULL;
@@ -1422,7 +1435,6 @@ instanceLink *createInstanceLink(void) {
 }
 
 /* Disconnect an hiredis connection in the context of an instance link. */
-//TODO@zhangyanjun:close mysql conntection
 void instanceLinkCloseConnection(instanceLink *link, redisAsyncContext *c) {
     if (c == NULL) return;
 
@@ -1441,11 +1453,12 @@ void instanceLinkCloseMysqlConnection(instanceLink *link, mysqlAsyncConnection *
     
     if (link->mc == c) {
         link->mc = NULL;
+        link->disconnected = 1;
     }
     if (link->pc == c) {
         link->pc = NULL;
+        link->pc_disconnected = 1;
     }
-    link->disconnected = 1;
     mysqlAsyncClose(c);
 }
 
@@ -1560,6 +1573,8 @@ int sentinelUpdateSentinelAddressInAllMasters(sentinelRedisInstance *ri) {
             instanceLinkCloseConnection(match->link,match->link->cc);
         if (match->link->pc != NULL)
             instanceLinkCloseMysqlConnection(match->link,match->link->pc);
+        if (match->link->mc != NULL)
+            instanceLinkCloseMysqlConnection(match->link,match->link->mc);
 
         if (match == ri) continue; /* Address already updated for it. */
 
@@ -2425,7 +2440,7 @@ void sentinelSetClientName(sentinelRedisInstance *ri, redisAsyncContext *c, char
  * is disconnected. Note that link->disconnected is true even if just
  * one of the two links (commands and pub/sub) is missing. */
 void sentinelReconnectInstance(sentinelRedisInstance *ri) {
-    if (ri->link->disconnected == 0) return;
+    if (ri->link->disconnected == 0 && ri->link->pc_disconnected == 0 ) return;
     if (ri->addr->port == 0) return; /* port == 0 means invalid address. */
     instanceLink *link = ri->link;
     mstime_t now = mstime();
@@ -2460,9 +2475,9 @@ void sentinelReconnectInstance(sentinelRedisInstance *ri) {
         }
     }else{
         /* mysql connection*/
-        /*if (link->mc != NULL){
+        if (link->mc != NULL && link->disconnected == 1 && mysql_errno(&link->mc->mysql)){
             instanceLinkCloseMysqlConnection(link, link->mc);
-        }*/
+        }
         if (link->mc == NULL){
             link->mc = mysqlAsyncConnectionInit(ri->addr->ip, ri->addr->port);
             link->mc_conn_time = mstime();
@@ -2472,7 +2487,10 @@ void sentinelReconnectInstance(sentinelRedisInstance *ri) {
     
     /* Pub / Sub */
     //We need not sub/pub connection in mysql sentinel mode, instead of insertion into mysql.mysql_sentinels table to subscribe to find the others mysql sentinels.
-    if ((ri->flags & (SRI_MASTER)) && link->pc == NULL) {
+    if (link->pc != NULL && link->pc_disconnected == 1 && mysql_errno(&link->pc->mysql)){
+        instanceLinkCloseMysqlConnection(link, link->pc);
+    }
+    if ((ri->flags & (SRI_MASTER)) && link->pc == NULL && !strncmp(ri->mysql_role, "master",strlen(ri->mysql_role))) {
         link->pc = mysqlAsyncConnectionInit(ri->addr->ip, ri->addr->port);
         link->pc_conn_time = mstime();
         mysqlAsyncPubSubConnectionHandler(ri,link->pc);
@@ -3066,7 +3084,7 @@ int sentinelSendMysqlHello(sentinelRedisInstance *ri) {
     //sentinelRedisInstance *master = (ri->flags & SRI_MASTER) ? ri : ri->master;
     //sentinelAddr *master_addr = sentinelGetCurrentMasterAddress(master);
     
-    if (ri->link->disconnected) return C_ERR;
+    if (ri->link->pc_disconnected) return C_ERR;
     
     /* Format and send the Hello message. */
     retval = mysqlAsyncPublishHandler(ri, ri->link->pc);

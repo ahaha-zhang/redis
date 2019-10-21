@@ -447,7 +447,7 @@ mysqlAsyncConnection* mysqlAsyncConnectionInit(char* ip,int port){
     }
     mysql_init(&mc->mysql);
     mysql_options(&mc->mysql, MYSQL_OPT_NONBLOCK, 0);
-    mc->async_state_machine=ASYNC_CONNECT_START;
+    mc->async_state_machine = ASYNC_CONNECT_START;
     mc->addr.ip = ip;
     mc->addr.port = port;
     mc->default_schema = "mysql";   //must mysql schema
@@ -605,12 +605,23 @@ int mysqlAsyncHandlerCallback(struct aeEventLoop *loop,int fd,void *data,int mas
     sentinelRedisInstance* master;
     mysqlAsyncConnection* mc;
     master=(sentinelRedisInstance*)data;
+    if(!master){
+        return 0;
+    }
+    if(!master->link){
+        master->link->disconnected = 1;
+        return 0;
+    }
     if(!master->link->mc){
         master->link->disconnected = 1;
         aeDeleteFileEvent(loop,fd,mask);
         return 0;
     }
-    mc=master->link->mc;
+    mc = master->link->mc;
+    if (!mc->async_state_machine){
+        master->link->disconnected = 1;
+        return 0;
+    }
     switch (mc->async_state_machine){
         case ASYNC_CONNECT_CONT:
             status = mysql_real_connect_cont(&mc->ret_mysql, &mc->mysql, 1);
@@ -670,13 +681,24 @@ int mysqlAsyncPubSubHandlerCallback(struct aeEventLoop *loop,int fd,void *data,i
     sentinelRedisInstance* master;
     mysqlAsyncConnection* pc;
     char subscribe_sql[512];
-    master=(sentinelRedisInstance*)data;
+    master = (sentinelRedisInstance*)data;
+    if(!master){
+        return 0;
+    }
+    if(!master->link){
+        master->link->pc_disconnected = 1;
+        return 0;
+    }
     if(!master->link->pc){
         master->link->pc_disconnected = 1;
         aeDeleteFileEvent(loop,fd,mask);
         return 0;
     }
     pc = master->link->pc;
+    if (!pc->async_state_machine){
+        master->link->pc_disconnected = 1;
+        return 0;
+    }
     switch (pc->async_state_machine){
         case ASYNC_CONNECT_CONT:
             status = mysql_real_connect_cont(&pc->ret_mysql, &pc->mysql, 1);
@@ -1498,7 +1520,20 @@ instanceLink *releaseInstanceLink(instanceLink *link, sentinelRedisInstance *ri)
     }
 
     instanceLinkCloseConnection(link,link->cc);
+    
+    //delete pending callback for mysql connection
+    if (ri && ri->link->pc){
+        if (ri->link->pc->fd > -1){
+            server.el->events[ri->link->pc->fd].clientData = NULL;
+        }
+    }
     instanceLinkCloseMysqlConnection(link,link->pc);
+    
+    if (ri && ri->link->mc){
+        if (ri->link->mc->fd > -1){
+            server.el->events[ri->link->mc->fd].clientData = NULL;
+        }
+    }
     instanceLinkCloseMysqlConnection(link,link->mc);
 
     zfree(link);
@@ -2475,7 +2510,7 @@ void sentinelReconnectInstance(sentinelRedisInstance *ri) {
         }
     }else{
         /* mysql connection*/
-        if (link->mc != NULL && link->disconnected == 1 && mysql_errno(&link->mc->mysql)){
+        if (link->mc != NULL && link->disconnected == 1){
             instanceLinkCloseMysqlConnection(link, link->mc);
         }
         if (link->mc == NULL){
@@ -2487,7 +2522,7 @@ void sentinelReconnectInstance(sentinelRedisInstance *ri) {
     
     /* Pub / Sub */
     //We need not sub/pub connection in mysql sentinel mode, instead of insertion into mysql.mysql_sentinels table to subscribe to find the others mysql sentinels.
-    if (link->pc != NULL && link->pc_disconnected == 1 && mysql_errno(&link->pc->mysql)){
+    if (link->pc != NULL && link->pc_disconnected == 1){
         instanceLinkCloseMysqlConnection(link, link->pc);
     }
     if ((ri->flags & (SRI_MASTER)) && link->pc == NULL && !strncmp(ri->mysql_role, "master",strlen(ri->mysql_role))) {

@@ -904,6 +904,7 @@ handler_again:
                         pc->mysql_row = mysql_fetch_row(pc->mysql_result);
                         if(!pc->mysql_row){
                             pc->async_state_machine = ASYNC_PUBLISH_START;
+                            mysql_free_result(pc->mysql_result);
                             return 0;
                         }else{
                             sentinelProcessHelloMessage(pc->mysql_row[0],strlen(pc->mysql_row[0]));
@@ -927,6 +928,7 @@ handler_again:
                     pc->mysql_row = mysql_fetch_row(pc->mysql_result);
                     if(!pc->mysql_row){
                         pc->async_state_machine = ASYNC_PUBLISH_START;
+                        mysql_free_result(pc->mysql_result);
                         return 0;
                     }else{
                         sentinelProcessHelloMessage(pc->mysql_row[0],strlen(pc->mysql_row[0]));

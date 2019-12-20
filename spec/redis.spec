@@ -1,13 +1,14 @@
 name        : redis-mysql-sentinel
-Version     : 4.0.11
+Version     : 4.0.14
 Release     : 1.el7
-Summary     : Rewrite redis sentinel for mysql by redis 4.0.11
+Summary     : Rewrite redis sentinel for mysql by redis 4.0.14
 URL         : http://git.dev.sh.ctripcorp.com/ops-mysql/redis-mysql-sentinel
-Source          : redis-mysql-sentinel.tgz
-BuildArch     : x86_64
+Source      : redis-mysql-sentinel.tgz
+BuildArch   : x86_64
 License     : BSD
-BuildRoot     : %{_tmppath}/%{name}-%{version}-%{release}-root
-Packager     : zhangyanjun@ctrip.com
+BuildRoot   : %{_tmppath}/%{name}-%{version}-%{release}-root
+Packager    : zhangyanjun@ctrip.com
+AutoReq     : no
 
 %description
 set is not volatile, and values can be strings, exactly like in memcached, but

@@ -508,7 +508,7 @@ void mysqlAsyncClose(mysqlAsyncConnection* c){
     c->mysql_result = NULL;
     
     int fd = c->fd;
-    /*char buff[5];
+    char buff[5];
     struct {
         u_int pkt_length:24, pkt_id:8;
     } mysql_hdr;
@@ -522,7 +522,7 @@ void mysqlAsyncClose(mysqlAsyncConnection* c){
     send(fd, buff, 5, 0);
 #else
     send(fd, buff, 5, MSG_NOSIGNAL);
-#endif*/
+#endif
 
     mysql_close(c->mysql);
     c->mysql = NULL;
@@ -550,7 +550,7 @@ int mysqlAsyncPingHandler(sentinelRedisInstance* master,mysqlAsyncConnection *mc
     
     status = mysql_real_query_start(&mc->err, mc->mysql, query_str,0);
     if (mc->err){
-        serverLog(LL_WARNING,"mysql_real_query_start error str:%s,%s:%d",mysql_error(mc->mysql),master->addr->ip,master->addr->port);
+        serverLog(LL_WARNING,"mysql_real_query_start error str:%s,%s,%s:%d,%d",mysql_error(mc->mysql),master->name,master->addr->ip,master->addr->port,mc->fd);
         master->link->disconnected = 1;
         mc->async_state_machine = ASYNC_CONNECT_FAILED;
         if (mc->fd > -1){
@@ -575,7 +575,7 @@ int mysqlAsyncSetSqlLogBinHandler(sentinelRedisInstance* master,mysqlAsyncConnec
         return C_ERR;
     status = mysql_real_query_start(&pc->err, pc->mysql, "set sql_log_bin=0",0);
     if (pc->err){
-        serverLog(LL_WARNING,"ASYNC_SET_SQL_LOG_BIN_START query error str:%s,%s:%d",mysql_error(pc->mysql),master->addr->ip,master->addr->port);
+        serverLog(LL_WARNING,"ASYNC_SET_SQL_LOG_BIN_START query error str:%s,%s,%s:%d,%d",mysql_error(pc->mysql),master->name,master->addr->ip,master->addr->port,pc->fd);
         pc->async_state_machine = ASYNC_CONNECT_FAILED;
         master->link->pc_disconnected = 1;
         if (pc->fd > -1){
@@ -690,14 +690,13 @@ handler_again:
             }
             if (!status){
                 if (!mc->ret_mysql){
-                    serverLog(LL_WARNING,"Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
+                    serverLog(LL_WARNING,"Failed to mysql_real_connect() %s:%d,%s,%d",master->addr->ip,master->addr->port,master->name,mc->fd);
                     if (mc->err){
-                        serverLog(LL_WARNING,"ASYNC_CONNECT_CONT error str:%s,%s:%d",mysql_error(mc->mysql),master->addr->ip,master->addr->port);
-                        master->link->disconnected = 1;
-                        mc->async_state_machine = ASYNC_CONNECT_FAILED;
-                        goto handler_again;
+                        serverLog(LL_WARNING,"ASYNC_CONNECT_CONT error str:%s,%s:%d,%d",mysql_error(mc->mysql),master->addr->ip,master->addr->port,mc->fd);
                     }
-                    break;
+                    master->link->disconnected = 1;
+                    mc->async_state_machine = ASYNC_CONNECT_FAILED;
+                    goto handler_again;
                 }else{
                     master->link->disconnected = 0;
                     master->link->last_avail_time = mstime();
@@ -721,7 +720,7 @@ handler_again:
             if(!status) {
                 if (mc->err){
                     //TODO@zhangyanjun:If user privilege error ,ignore
-                    serverLog(LL_WARNING,"ASYNC_PING_CONT error str:%s %s:%d",mysql_error(mc->mysql),master->addr->ip,master->addr->port);
+                    serverLog(LL_WARNING,"ASYNC_PING_CONT error str:%s %s:%d,%d",mysql_error(mc->mysql),master->addr->ip,master->addr->port,mc->fd);
                     master->link->disconnected = 1;
                     mc->async_state_machine = ASYNC_CONNECT_FAILED;
                     goto handler_again;
@@ -784,11 +783,11 @@ handler_again:
             }
             if (!status){
                 if (!pc->ret_mysql){
-                    serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() %s:%d",master->addr->ip,master->addr->port);
+                    serverLog(LL_WARNING,"PubSub Failed to mysql_real_connect() %s:%d,%d",master->addr->ip,master->addr->port,pc->fd);
                     master->link->pc_disconnected = 1;
                     pc->async_state_machine = ASYNC_CONNECT_FAILED;
                     if (pc->err){
-                        serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s %s:%d",mysql_error(pc->mysql),master->addr->ip,master->addr->port);
+                        serverLog(LL_WARNING,"PubSub ASYNC_CONNECT_CONT error str:%s,%s, %s:%d,%d",mysql_error(pc->mysql),master->name,master->addr->ip,master->addr->port,pc->fd);
                     }
                     goto handler_again;
                 }else{
@@ -812,7 +811,7 @@ handler_again:
             }
             if (!status){
                 if (pc->err){
-                    serverLog(LL_WARNING,"PubSub ASYNC_SET_SQL_LOG_BIN_CONT error str:%s %s:%d",mysql_error(pc->mysql),master->addr->ip,master->addr->port);
+                    serverLog(LL_WARNING,"PubSub ASYNC_SET_SQL_LOG_BIN_CONT error str:%s,%s, %s:%d,%d",mysql_error(pc->mysql),master->name,master->addr->ip,master->addr->port,pc->fd);
                     master->link->pc_disconnected = 1;
                     pc->async_state_machine = ASYNC_CONNECT_FAILED;
                     goto handler_again;
@@ -836,7 +835,7 @@ handler_again:
             }
             if (!status){
                 if (pc->err){
-                    serverLog(LL_WARNING,"PubSub ASYNC_PUBLISH_CONT error str:%s %s,%d",mysql_error(pc->mysql),master->addr->ip,master->addr->port);
+                    serverLog(LL_WARNING,"PubSub ASYNC_PUBLISH_CONT error str:%s,%s %s,%d,%d",mysql_error(pc->mysql),master->name,master->addr->ip,master->addr->port,pc->fd);
                     pc->async_state_machine = ASYNC_CONNECT_FAILED;
                     master->link->pc_disconnected = 1;
                     goto handler_again;
@@ -848,7 +847,7 @@ handler_again:
                 snprintf(subscribe_sql, 512, "select concat(sentinel_ip,',',sentinel_port,',',sentinel_runid,',',sentinel_current_epoch,',',cluster_name,',',master_ip,',',master_port,',',master_config_epoch) as hello from mysql.mysql_sentinel where datachange_lasttime > now() - interval 1 minute and sentinel_runid != '%s'",sentinel.myid);
                 status = mysql_real_query_start(&pc->err, pc->mysql,subscribe_sql,0);
                 if (pc->err){
-                    serverLog(LL_WARNING,"mysql_real_query_start for sub query error str:%s %s,%d",mysql_error(pc->mysql),master->addr->ip,master->addr->port);
+                    serverLog(LL_WARNING,"mysql_real_query_start for sub query error str:%s,%s, %s,%d,%d",mysql_error(pc->mysql),master->name,master->addr->ip,master->addr->port,pc->fd);
                     pc->async_state_machine = ASYNC_CONNECT_FAILED;
                     master->link->pc_disconnected = 1;
                     goto handler_again;
@@ -879,7 +878,7 @@ handler_again:
             }
             if (!status){
                 if (pc->err){
-                    serverLog(LL_WARNING,"PubSub ASYNC_SUBSCRIBE_CONT error str:%s %s:%d",mysql_error(pc->mysql),master->addr->ip,master->addr->port);
+                    serverLog(LL_WARNING,"PubSub ASYNC_SUBSCRIBE_CONT error str:%s,%s, %s:%d,%d",mysql_error(pc->mysql),master->name,master->addr->ip,master->addr->port,pc->fd);
                     pc->async_state_machine = ASYNC_CONNECT_FAILED;
                     master->link->pc_disconnected = 1;
                     goto handler_again;

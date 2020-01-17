@@ -545,10 +545,7 @@ int mysqlAsyncPingHandler(sentinelRedisInstance* master,mysqlAsyncConnection *mc
     int status;
     if (mc->async_state_machine != ASYNC_PING_START )
         return C_ERR;
-    char query_str[512];
-    snprintf(query_str, 512, "select '%s'",master->name);
-    
-    status = mysql_real_query_start(&mc->err, mc->mysql, query_str,0);
+    status = mysql_real_query_start(&mc->err, mc->mysql, "create table if not exists mysql.mysql_sentinel_ping(i int primary key)",0);
     if (mc->err){
         serverLog(LL_WARNING,"mysql_real_query_start error str:%s,%s,%s:%d,%d",mysql_error(mc->mysql),master->name,master->addr->ip,master->addr->port,mc->fd);
         master->link->disconnected = 1;
@@ -563,6 +560,31 @@ int mysqlAsyncPingHandler(sentinelRedisInstance* master,mysqlAsyncConnection *mc
         status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
         if(status == AE_OK){
             mc->async_state_machine = ASYNC_PING_CONT;
+            return C_OK;
+        }
+    }
+    return C_ERR;
+}
+
+int mysqlAsyncPingSetSqlLogBinHandler(sentinelRedisInstance* master,mysqlAsyncConnection *mc){
+    int status;
+    if (mc->async_state_machine != ASYNC_SET_SQL_LOG_BIN_START)
+        return C_ERR;
+    status = mysql_real_query_start(&mc->err, mc->mysql, "set sql_log_bin=0",0);
+    if (mc->err){
+        serverLog(LL_WARNING,"ASYNC_SET_SQL_LOG_BIN_START query error str:%s,%s,%s:%d,%d",mysql_error(mc->mysql),master->name,master->addr->ip,master->addr->port,mc->fd);
+        mc->async_state_machine = ASYNC_CONNECT_FAILED;
+        master->link->disconnected = 1;
+        if (mc->fd > -1){
+            server.el->events[mc->fd].clientData = NULL;
+        }
+        mysqlAsyncClose(mc);
+        master->link->mc = NULL;
+        return C_ERR;
+    }else{
+        status = aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
+        if(status == AE_OK){
+            mc->async_state_machine = ASYNC_SET_SQL_LOG_BIN_CONT;
             return C_OK;
         }
     }
@@ -702,8 +724,36 @@ handler_again:
                     master->link->last_avail_time = mstime();
                     master->link->act_ping_time = 0;
                     master->link->last_pong_time = mstime();
-                    mc->async_state_machine = ASYNC_PING_START;
+                    mc->async_state_machine = ASYNC_SET_SQL_LOG_BIN_START;
+                    mysqlAsyncPingSetSqlLogBinHandler(master,mc);
                 }
+            }
+            break;
+        case ASYNC_SET_SQL_LOG_BIN_CONT:
+            status = mysql_real_query_cont(&mc->err, mc->mysql, 1);
+            aeDeleteFileEvent(loop,fd,mask);
+            if (status){
+                status = mysql_real_query_cont(&mc->err, mc->mysql, status);
+                if (status){
+                    aeCreateFileEvent(mc->loop,mc->fd,AE_READABLE,(aeFileProc *)mysqlAsyncHandlerCallback,(void *)master);
+                    mc->async_state_machine = ASYNC_SET_SQL_LOG_BIN_CONT;
+                    return 1;
+                }
+            }
+            if (!status){
+                if (mc->err){
+                    serverLog(LL_WARNING,"PubSub ASYNC_SET_SQL_LOG_BIN_CONT error str:%s,%s, %s:%d,%d",mysql_error(mc->mysql),master->name,master->addr->ip,master->addr->port,mc->fd);
+                    master->link->disconnected = 1;
+                    mc->async_state_machine = ASYNC_CONNECT_FAILED;
+                    goto handler_again;
+                }
+                mc->async_state_machine=ASYNC_PING_START;
+                master->link->disconnected = 0;
+                master->link->last_avail_time = mstime();
+                master->link->act_ping_time = 0;
+                master->link->last_pong_time = mstime();
+                mc->mysql_result = mysql_use_result(mc->mysql);
+                mysql_free_result(mc->mysql_result);
             }
             break;
         case ASYNC_PING_CONT:

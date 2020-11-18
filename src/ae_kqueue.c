@@ -112,10 +112,8 @@ static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) {
         retval = kevent(state->kqfd, NULL, 0, state->events, eventLoop->setsize,
                         &timeout);
     } else {
-        printf("aeApiPolling\n");
         retval = kevent(state->kqfd, NULL, 0, state->events, eventLoop->setsize,
                         NULL);
-        printf("aeApiPolled\n");
     }
 
     if (retval > 0) {
